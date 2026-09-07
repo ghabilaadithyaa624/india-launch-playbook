@@ -1,0 +1,13 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# If this repo grows to hold an actual codebase alongside the docs:
+node_modules/
+.env
+.env.local
+dist/
+build/
