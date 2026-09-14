@@ -33,7 +33,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// EVIDENCE LAYER — agents may cite only these source ids.\n// Mirrors config/source-whitelist.yaml. Keep the two in sync.\nconst SOURCES = [\n  { id:\"S001\", type:\"primary_regulator\", publisher:\"MeitY\", title:\"Digital Personal Data Protection Act, 2023 and Rules\", url:\"https://www.meity.gov.in/\", topics:[\"privacy\",\"data_protection\",\"regulatory_compliance\"] },\n  { id:\"S002\", type:\"primary_regulator\", publisher:\"TRAI\", title:\"Commercial communications / DLT guidance\", url:\"https://trai.gov.in/\", topics:[\"messaging\",\"marketing\"] },\n  { id:\"S003\", type:\"primary_regulator\", publisher:\"RBI\", title:\"Payment and Settlement Systems directions\", url:\"https://www.rbi.org.in/\", topics:[\"payments\",\"kyc\"] },\n  { id:\"S004\", type:\"primary_regulator\", publisher:\"CERT-In\", title:\"Cyber incident reporting directions\", url:\"https://www.cert-in.org.in/\", topics:[\"security\",\"incident_response\"] },\n  { id:\"S005\", type:\"primary_regulator\", publisher:\"MCA\", title:\"Company incorporation and compliance\", url:\"https://www.mca.gov.in/\", topics:[\"entity\",\"incorporation\"] },\n  { id:\"S006\", type:\"primary_regulator\", publisher:\"GSTN\", title:\"GST registration, returns and rates\", url:\"https://www.gst.gov.in/\", topics:[\"tax\",\"gst\"] },\n  { id:\"S007\", type:\"primary_regulator\", publisher:\"Udyam / MSME\", title:\"Udyam registration\", url:\"https://udyamregistration.gov.in/\", topics:[\"entity\",\"msme\"] },\n  { id:\"S008\", type:\"primary_regulator\", publisher:\"IP India\", title:\"Trademark search and filing\", url:\"https://ipindia.gov.in/\", topics:[\"brand\",\"trademark\"] },\n  { id:\"S009\", type:\"primary_regulator\", publisher:\"FSSAI\", title:\"Food licensing, labelling and claims\", url:\"https://www.fssai.gov.in/\", topics:[\"food\",\"licensing\"] },\n  { id:\"S010\", type:\"primary_regulator\", publisher:\"DGFT\", title:\"Import/export policy and licensing\", url:\"https://www.dgft.gov.in/\", topics:[\"import\",\"export\"] },\n  { id:\"S011\", type:\"government_statistics\", publisher:\"MoSPI\", title:\"National accounts and consumption statistics\", url:\"https://www.mospi.gov.in/\", topics:[\"market_research\",\"demographics\",\"gdp\"] },\n  { id:\"S012\", type:\"government_statistics\", publisher:\"Census of India\", title:\"Population and urbanisation data\", url:\"https://censusindia.gov.in/\", topics:[\"demographics\",\"population\"] },\n  { id:\"S013\", type:\"government_statistics\", publisher:\"Ministry of Finance\", title:\"Economic Survey and Budget documents\", url:\"https://www.indiabudget.gov.in/\", topics:[\"macro\",\"sector_policy\"] },\n  { id:\"S014\", type:\"primary_regulator\", publisher:\"Ministry of Labour\", title:\"Labour codes and wage regulation\", url:\"https://labour.gov.in/\", topics:[\"hr\",\"employment\"] },\n];\nconst today = new Date().toISOString().slice(0,10);\nconst block = [\"## AVAILABLE SOURCES\", \"\",\n  \"You may cite ONLY these source ids. Anything not supported by one of them\",\n  \"belongs in assumptions[] or estimates[], never in facts[].\", \"\"]\n  .concat(SOURCES.map(s => `- ${s.id} | ${s.type} | ${s.publisher} — ${s.title} <${s.url}>`))\n  .join(\"\\n\");\nconst prev = $input.first().json;\nreturn [{ json: { ...prev, sources: SOURCES.map(s => ({ ...s, accessed_at: today, retrieval_method: \"none\", published_at: null })), source_block: block } }];"
+        "jsCode": "// EVIDENCE LAYER \u2014 agents may cite only these source ids.\n// Mirrors config/source-whitelist.yaml. Keep the two in sync.\nconst SOURCES = [\n  { id:\"S001\", type:\"primary_regulator\", publisher:\"MeitY\", title:\"Digital Personal Data Protection Act, 2023 and Rules\", url:\"https://www.meity.gov.in/\", topics:[\"privacy\",\"data_protection\",\"regulatory_compliance\"] },\n  { id:\"S002\", type:\"primary_regulator\", publisher:\"TRAI\", title:\"Commercial communications / DLT guidance\", url:\"https://trai.gov.in/\", topics:[\"messaging\",\"marketing\"] },\n  { id:\"S003\", type:\"primary_regulator\", publisher:\"RBI\", title:\"Payment and Settlement Systems directions\", url:\"https://www.rbi.org.in/\", topics:[\"payments\",\"kyc\"] },\n  { id:\"S004\", type:\"primary_regulator\", publisher:\"CERT-In\", title:\"Cyber incident reporting directions\", url:\"https://www.cert-in.org.in/\", topics:[\"security\",\"incident_response\"] },\n  { id:\"S005\", type:\"primary_regulator\", publisher:\"MCA\", title:\"Company incorporation and compliance\", url:\"https://www.mca.gov.in/\", topics:[\"entity\",\"incorporation\"] },\n  { id:\"S006\", type:\"primary_regulator\", publisher:\"GSTN\", title:\"GST registration, returns and rates\", url:\"https://www.gst.gov.in/\", topics:[\"tax\",\"gst\"] },\n  { id:\"S007\", type:\"primary_regulator\", publisher:\"Udyam / MSME\", title:\"Udyam registration\", url:\"https://udyamregistration.gov.in/\", topics:[\"entity\",\"msme\"] },\n  { id:\"S008\", type:\"primary_regulator\", publisher:\"IP India\", title:\"Trademark search and filing\", url:\"https://ipindia.gov.in/\", topics:[\"brand\",\"trademark\"] },\n  { id:\"S009\", type:\"primary_regulator\", publisher:\"FSSAI\", title:\"Food licensing, labelling and claims\", url:\"https://www.fssai.gov.in/\", topics:[\"food\",\"licensing\"] },\n  { id:\"S010\", type:\"primary_regulator\", publisher:\"DGFT\", title:\"Import/export policy and licensing\", url:\"https://www.dgft.gov.in/\", topics:[\"import\",\"export\"] },\n  { id:\"S011\", type:\"government_statistics\", publisher:\"MoSPI\", title:\"National accounts and consumption statistics\", url:\"https://www.mospi.gov.in/\", topics:[\"market_research\",\"demographics\",\"gdp\"] },\n  { id:\"S012\", type:\"government_statistics\", publisher:\"Census of India\", title:\"Population and urbanisation data\", url:\"https://censusindia.gov.in/\", topics:[\"demographics\",\"population\"] },\n  { id:\"S013\", type:\"government_statistics\", publisher:\"Ministry of Finance\", title:\"Economic Survey and Budget documents\", url:\"https://www.indiabudget.gov.in/\", topics:[\"macro\",\"sector_policy\"] },\n  { id:\"S014\", type:\"primary_regulator\", publisher:\"Ministry of Labour\", title:\"Labour codes and wage regulation\", url:\"https://labour.gov.in/\", topics:[\"hr\",\"employment\"] },\n];\nconst today = new Date().toISOString().slice(0,10);\nconst block = [\"## AVAILABLE SOURCES\", \"\",\n  \"You may cite ONLY these source ids. Anything not supported by one of them\",\n  \"belongs in assumptions[] or estimates[], never in facts[].\", \"\"]\n  .concat(SOURCES.map(s => `- ${s.id} | ${s.type} | ${s.publisher} \u2014 ${s.title} <${s.url}>`))\n  .join(\"\\n\");\nconst prev = $input.first().json;\nreturn [{ json: { ...prev, sources: SOURCES.map(s => ({ ...s, accessed_at: today, retrieval_method: \"none\", published_at: null })), source_block: block } }];"
       },
       "id": "node_sourcepack",
       "name": "Build Source Pack",
@@ -93,7 +93,9 @@
       "onError": "continueRegularOutput",
       "retryOnFail": true,
       "maxTries": 3,
-      "waitBetweenTries": 5000
+      "waitBetweenTries": 5000,
+      "notes": "Provider-specific. This node targets Anthropic (x-api-key + /v1/messages). If your key is an OpenRouter key (sk-or-v1-...), change the URL to https://openrouter.ai/api/v1/chat/completions, use Bearer auth, and move 'system' into messages[0]. See PIPELINE.md > Providers.",
+      "notesInFlow": false
     },
     {
       "parameters": {
@@ -144,7 +146,9 @@
       "onError": "continueRegularOutput",
       "retryOnFail": true,
       "maxTries": 3,
-      "waitBetweenTries": 5000
+      "waitBetweenTries": 5000,
+      "notes": "Provider-specific. This node targets Anthropic (x-api-key + /v1/messages). If your key is an OpenRouter key (sk-or-v1-...), change the URL to https://openrouter.ai/api/v1/chat/completions, use Bearer auth, and move 'system' into messages[0]. See PIPELINE.md > Providers.",
+      "notesInFlow": false
     },
     {
       "parameters": {
@@ -195,7 +199,9 @@
       "onError": "continueRegularOutput",
       "retryOnFail": true,
       "maxTries": 3,
-      "waitBetweenTries": 5000
+      "waitBetweenTries": 5000,
+      "notes": "Provider-specific. This node targets Anthropic (x-api-key + /v1/messages). If your key is an OpenRouter key (sk-or-v1-...), change the URL to https://openrouter.ai/api/v1/chat/completions, use Bearer auth, and move 'system' into messages[0]. See PIPELINE.md > Providers.",
+      "notesInFlow": false
     },
     {
       "parameters": {
@@ -246,7 +252,9 @@
       "onError": "continueRegularOutput",
       "retryOnFail": true,
       "maxTries": 3,
-      "waitBetweenTries": 5000
+      "waitBetweenTries": 5000,
+      "notes": "Provider-specific. This node targets Anthropic (x-api-key + /v1/messages). If your key is an OpenRouter key (sk-or-v1-...), change the URL to https://openrouter.ai/api/v1/chat/completions, use Bearer auth, and move 'system' into messages[0]. See PIPELINE.md > Providers.",
+      "notesInFlow": false
     },
     {
       "parameters": {
@@ -297,7 +305,9 @@
       "onError": "continueRegularOutput",
       "retryOnFail": true,
       "maxTries": 3,
-      "waitBetweenTries": 5000
+      "waitBetweenTries": 5000,
+      "notes": "Provider-specific. This node targets Anthropic (x-api-key + /v1/messages). If your key is an OpenRouter key (sk-or-v1-...), change the URL to https://openrouter.ai/api/v1/chat/completions, use Bearer auth, and move 'system' into messages[0]. See PIPELINE.md > Providers.",
+      "notesInFlow": false
     },
     {
       "parameters": {
@@ -348,7 +358,9 @@
       "onError": "continueRegularOutput",
       "retryOnFail": true,
       "maxTries": 3,
-      "waitBetweenTries": 5000
+      "waitBetweenTries": 5000,
+      "notes": "Provider-specific. This node targets Anthropic (x-api-key + /v1/messages). If your key is an OpenRouter key (sk-or-v1-...), change the URL to https://openrouter.ai/api/v1/chat/completions, use Bearer auth, and move 'system' into messages[0]. See PIPELINE.md > Providers.",
+      "notesInFlow": false
     },
     {
       "parameters": {
@@ -399,7 +411,9 @@
       "onError": "continueRegularOutput",
       "retryOnFail": true,
       "maxTries": 3,
-      "waitBetweenTries": 5000
+      "waitBetweenTries": 5000,
+      "notes": "Provider-specific. This node targets Anthropic (x-api-key + /v1/messages). If your key is an OpenRouter key (sk-or-v1-...), change the URL to https://openrouter.ai/api/v1/chat/completions, use Bearer auth, and move 'system' into messages[0]. See PIPELINE.md > Providers.",
+      "notesInFlow": false
     },
     {
       "parameters": {
@@ -450,11 +464,13 @@
       "onError": "continueRegularOutput",
       "retryOnFail": true,
       "maxTries": 3,
-      "waitBetweenTries": 5000
+      "waitBetweenTries": 5000,
+      "notes": "Provider-specific. This node targets Anthropic (x-api-key + /v1/messages). If your key is an OpenRouter key (sk-or-v1-...), change the URL to https://openrouter.ai/api/v1/chat/completions, use Bearer auth, and move 'system' into messages[0]. See PIPELINE.md > Providers.",
+      "notesInFlow": false
     },
     {
       "parameters": {
-        "jsCode": "// Bind each response to its agent BY NODE NAME, never by array position.\n// Positional mapping was the bug that could file financials as competitive analysis.\nconst AGENTS = [\n  {\n    \"id\": \"market_research\",\n    \"name\": \"Agent 1 - Market Research\"\n  },\n  {\n    \"id\": \"regulatory_compliance\",\n    \"name\": \"Agent 2 - Regulatory Compliance\"\n  },\n  {\n    \"id\": \"market_entry\",\n    \"name\": \"Agent 3 - Market Entry\"\n  },\n  {\n    \"id\": \"competitive_landscape\",\n    \"name\": \"Agent 4 - Competitive Landscape\"\n  },\n  {\n    \"id\": \"go_to_market\",\n    \"name\": \"Agent 5 - Go To Market\"\n  },\n  {\n    \"id\": \"financial_projections\",\n    \"name\": \"Agent 6 - Financial Projections\"\n  },\n  {\n    \"id\": \"risk_management\",\n    \"name\": \"Agent 7 - Risk Management\"\n  },\n  {\n    \"id\": \"implementation_roadmap\",\n    \"name\": \"Agent 8 - Implementation Roadmap\"\n  }\n];\nconst meta = $(\"Build Source Pack\").first().json;\nconst out = [];\nconst failures = [];\nfor (const a of AGENTS) {\n  let raw;\n  try { raw = $(a.name).first().json; } catch (e) { failures.push(`${a.id}: no output`); continue; }\n  const text = raw?.content?.[0]?.text;\n  if (typeof text !== \"string\") { failures.push(`${a.id}: missing content[0].text`); continue; }\n  if (raw?.stop_reason === \"max_tokens\") failures.push(`${a.id}: TRUNCATED (stop_reason=max_tokens)`);\n  let doc;\n  try {\n    doc = JSON.parse(text.trim().replace(/^```(?:json)?/,\"\").replace(/```$/,\"\").trim());\n  } catch (e) { failures.push(`${a.id}: invalid JSON — ${e.message}`); continue; }\n  doc.run_id = meta.run_id;\n  doc.input_digest = meta.input_digest;\n  if (doc.agent) doc.agent.id = a.id;\n  out.push(doc);\n}\nreturn [{ json: { run_id: meta.run_id, input: meta.input, input_digest: meta.input_digest, agents: out, failures, agent_count: out.length } }];"
+        "jsCode": "// Bind each response to its agent BY NODE NAME, never by array position.\n// Positional mapping was the bug that could file financials as competitive analysis.\nconst AGENTS = [\n  {\n    \"id\": \"market_research\",\n    \"name\": \"Agent 1 - Market Research\"\n  },\n  {\n    \"id\": \"regulatory_compliance\",\n    \"name\": \"Agent 2 - Regulatory Compliance\"\n  },\n  {\n    \"id\": \"market_entry\",\n    \"name\": \"Agent 3 - Market Entry\"\n  },\n  {\n    \"id\": \"competitive_landscape\",\n    \"name\": \"Agent 4 - Competitive Landscape\"\n  },\n  {\n    \"id\": \"go_to_market\",\n    \"name\": \"Agent 5 - Go To Market\"\n  },\n  {\n    \"id\": \"financial_projections\",\n    \"name\": \"Agent 6 - Financial Projections\"\n  },\n  {\n    \"id\": \"risk_management\",\n    \"name\": \"Agent 7 - Risk Management\"\n  },\n  {\n    \"id\": \"implementation_roadmap\",\n    \"name\": \"Agent 8 - Implementation Roadmap\"\n  }\n];\nconst meta = $(\"Build Source Pack\").first().json;\nconst out = [];\nconst failures = [];\nfor (const a of AGENTS) {\n  let raw;\n  try { raw = $(a.name).first().json; } catch (e) { failures.push(`${a.id}: no output`); continue; }\n  const text = raw?.content?.[0]?.text;\n  if (typeof text !== \"string\") { failures.push(`${a.id}: missing content[0].text`); continue; }\n  if (raw?.stop_reason === \"max_tokens\") failures.push(`${a.id}: TRUNCATED (stop_reason=max_tokens)`);\n  let doc;\n  try {\n    doc = JSON.parse(text.trim().replace(/^```(?:json)?/,\"\").replace(/```$/,\"\").trim());\n  } catch (e) { failures.push(`${a.id}: invalid JSON \u2014 ${e.message}`); continue; }\n  doc.run_id = meta.run_id;\n  doc.input_digest = meta.input_digest;\n  if (doc.agent) doc.agent.id = a.id;\n  out.push(doc);\n}\nreturn [{ json: { run_id: meta.run_id, input: meta.input, input_digest: meta.input_digest, agents: out, failures, agent_count: out.length } }];"
       },
       "id": "node_collect",
       "name": "Collect Agent Outputs",

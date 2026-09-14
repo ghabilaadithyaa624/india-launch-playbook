@@ -40,6 +40,19 @@ Plan, build, protect and launch a customer-ready website or platform in India â€
 
 ---
 
+
+### Run it against a real model
+
+```bash
+export LLM_API_KEY=sk-or-v1-...   # OpenRouter, or sk-ant-... for Anthropic
+node src/cli/run-agents.mjs --out runs/live/agents
+node src/cli/pipeline.mjs --agents runs/live/agents --run-dir runs/live
+```
+
+The provider is detected from the key prefix. Agent output that cites no source,
+invents a source, or gives a point estimate without bounds is rejected before it
+can reach the playbook. See [PIPELINE.md](PIPELINE.md#providers-and-live-agent-runs).
+
 ## 2 Â· The generator (AI, evidence-gated)
 
 Eight specialist agents analyse a business idea, then a deterministic pipeline validates, reconciles, renders and publishes the result.

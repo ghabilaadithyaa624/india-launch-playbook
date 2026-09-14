@@ -59,7 +59,12 @@ export async function writeText(p, text) {
 export async function listJson(dir) {
   if (!existsSync(dir)) return [];
   const names = await readdir(dir);
-  return names.filter((n) => n.endsWith('.json')).sort();
+  // Files prefixed with "_" are sidecars, not agent documents:
+  //   _run-meta.json      run metadata written by run-agents
+  //   _rejected.*.json    outputs kept for inspection after failing the contract
+  // Treating either as an agent output would abort an otherwise valid run, and
+  // a rejected document must never re-enter the pipeline through the back door.
+  return names.filter((n) => n.endsWith('.json') && !n.startsWith('_')).sort();
 }
 
 /** Minimal arg parser: --key value  and  --flag */

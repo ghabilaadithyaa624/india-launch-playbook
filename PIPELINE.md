@@ -188,6 +188,60 @@ SOURCE_DATE_EPOCH=1757836800 npm run pipeline -- \
 
 ---
 
+
+## Providers and live agent runs
+
+The pipeline is provider-agnostic. The provider is inferred from your key:
+
+| Key prefix | Provider | Endpoint | Auth header | System prompt |
+|---|---|---|---|---|
+| `sk-or-v1-` | OpenRouter | `/v1/chat/completions` | `Authorization: Bearer` | `messages[0]` |
+| `sk-ant-` | Anthropic | `/v1/messages` | `x-api-key` | top-level `system` |
+
+These are not interchangeable. An OpenRouter key sent to `api.anthropic.com`
+returns 401, and the request bodies differ in shape.
+
+### Running the agents live
+
+```bash
+export LLM_API_KEY=sk-or-v1-...        # never pass a key as a CLI flag
+node src/cli/run-agents.mjs --input test/fixtures/run-input.json --out runs/live/agents
+node src/cli/pipeline.mjs   --agents runs/live/agents --run-dir runs/live
+```
+
+Useful flags: `--only market_research,financial_projections` to run a subset,
+`--model <id>`, `--max-tokens <n>`, `--concurrency <n>`, `--base-url <url>`.
+
+The key is read from the environment only (`LLM_API_KEY`, `OPENROUTER_API_KEY`
+or `ANTHROPIC_API_KEY`), never from a flag, so it cannot leak into shell
+history or CI logs. Output is masked to `sk-or-v1-…abcd`.
+
+### What happens to a bad response
+
+Every agent output is validated before it can reach synthesis:
+
+| Stage | Failure | Result |
+|---|---|---|
+| transport | network error, 5xx, timeout | retried with backoff; 4xx is not retried |
+| truncated | `stop_reason` is `max_tokens`/`length` | reported as truncation — raise `--max-tokens` |
+| parse | not JSON, or JSON is malformed | rejected; never "repaired" |
+| contract | unsourced fact, invented source, missing bounds | rejected, written to `_rejected.<agent>.json` |
+
+Only documents that pass all four stages are written as `<agent>.json`. Files
+prefixed with `_` are sidecars and are ignored by the pipeline.
+
+Run identity (`run_id`, `input_digest`, `agent.id`, `agent.prompt_sha256`) is
+stamped by the runner, not taken from the model, so a run cannot be misfiled
+by a model that echoes the wrong value.
+
+### Testing without burning quota
+
+`test/mock-provider.mjs` speaks both dialects and reproduces the failures that
+matter: valid, fenced JSON, prose-wrapped JSON, fabricated statistics,
+truncation, non-JSON, 429 with retry, and 401. `test/live-agent.test.mjs`
+exercises the real transport, retry, parsing and validation code against it —
+only the TLS hop is substituted. These tests need no API key and run in CI.
+
 ## 9 · Status
 
 | Layer | State |
