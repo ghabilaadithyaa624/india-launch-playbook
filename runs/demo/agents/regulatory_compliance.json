@@ -1,0 +1,190 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "5d1f0f4e-6a2b-4c3d-8e9f-0a1b2c3d4e5f",
+  "agent": {
+    "id": "regulatory_compliance",
+    "name": "Regulatory & Compliance Framework",
+    "version": "1.0.0",
+    "model": "claude-opus-5",
+    "prompt_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+  },
+  "generated_at": "2026-09-14T06:01:00.000Z",
+  "input_digest": "c242515ea4075853fbdfa43a262f1104347569829a2d27265e2368bd951d3f1c",
+  "executive_summary": "A SaaS product that stores client invoice and vendor data triggers obligations under India's digital personal data protection regime, GST registration and invoicing rules, and CERT-In incident reporting directions. The DPDP Act has staged commencement, so applicability must be determined against the planned launch date rather than copied from secondary summaries. None of the items below substitute for advice from Indian counsel and a chartered accountant.",
+  "facts": [
+    {
+      "id": "F001",
+      "statement": "The Digital Personal Data Protection Act, 2023 and its Rules are published by the Ministry of Electronics and Information Technology.",
+      "value": null,
+      "unit": null,
+      "as_of": "2026-09-14",
+      "source_ids": [
+        "S001"
+      ],
+      "verification": "primary_source_verified"
+    },
+    {
+      "id": "F002",
+      "statement": "CERT-In publishes directions and advisories governing cyber incident reporting obligations for entities operating in India.",
+      "value": null,
+      "unit": null,
+      "as_of": "2026-09-14",
+      "source_ids": [
+        "S004"
+      ],
+      "verification": "primary_source_verified"
+    },
+    {
+      "id": "F003",
+      "statement": "Company incorporation and post-incorporation compliance processes are administered through the Ministry of Corporate Affairs.",
+      "value": null,
+      "unit": null,
+      "as_of": "2026-09-14",
+      "source_ids": [
+        "S005"
+      ],
+      "verification": "primary_source_verified"
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "A001",
+      "statement": "The product will process personal data of client employees and vendor contacts, bringing it within scope of the DPDP regime.",
+      "rationale": "Invoicing and reconciliation workflows normally carry named contact details; not yet confirmed against the final data model.",
+      "impact_if_wrong": "high",
+      "validation_method": "Complete the data inventory worksheet and have counsel confirm scope against the shipped schema."
+    }
+  ],
+  "estimates": [
+    {
+      "id": "E001",
+      "metric": "elapsed weeks to complete entity and tax registrations",
+      "low": 3,
+      "base": 7,
+      "high": 14,
+      "unit": "weeks",
+      "method": "expert_judgement",
+      "depends_on": [
+        "A001"
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "R001",
+      "action": "Determine which DPDP provisions apply on the planned launch date with Indian counsel and keep a dated compliance record.",
+      "priority": "P0",
+      "owner_role": "Founder / Legal",
+      "effort": "M",
+      "rationale_ids": [
+        "F001",
+        "A001"
+      ],
+      "requires_professional_review": true
+    },
+    {
+      "id": "R002",
+      "action": "Complete a data inventory covering every personal data field, its purpose, retention period and processor before onboarding a paying customer.",
+      "priority": "P0",
+      "owner_role": "Product lead",
+      "effort": "M",
+      "rationale_ids": [
+        "A001"
+      ],
+      "requires_professional_review": true
+    },
+    {
+      "id": "R003",
+      "action": "Prepare CERT-In incident contacts, log retention and an escalation path before production launch.",
+      "priority": "P1",
+      "owner_role": "Engineering lead",
+      "effort": "M",
+      "rationale_ids": [
+        "F002"
+      ],
+      "requires_professional_review": true
+    }
+  ],
+  "risks": [
+    {
+      "id": "K001",
+      "description": "Publishing compliance claims in marketing without counsel review could create consumer-protection and regulatory exposure.",
+      "category": "regulatory",
+      "likelihood": 3,
+      "impact": 5,
+      "mitigation": "Route every compliance claim through counsel review and keep a dated record of the basis for each claim.",
+      "early_warning_indicator": "Any marketing copy asserting certification or guaranteed compliance."
+    },
+    {
+      "id": "K002",
+      "description": "Holding client invoice data without a tested retention and deletion process increases breach impact and regulatory exposure.",
+      "category": "regulatory",
+      "likelihood": 3,
+      "impact": 4,
+      "mitigation": "Implement retention limits and a tested deletion path before the first production tenant.",
+      "early_warning_indicator": "Data inventory shows fields with no defined retention period."
+    }
+  ],
+  "dependencies": [
+    {
+      "agent_id": "implementation_roadmap",
+      "relationship": "informs",
+      "note": "Registration lead times gate the launch sequence."
+    },
+    {
+      "agent_id": "risk_management",
+      "relationship": "informs"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S001",
+      "type": "primary_regulator",
+      "publisher": "Ministry of Electronics and Information Technology (MeitY)",
+      "title": "Digital Personal Data Protection Act, 2023 and Rules",
+      "url": "https://www.meity.gov.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none"
+    },
+    {
+      "id": "S004",
+      "type": "primary_regulator",
+      "publisher": "Indian Computer Emergency Response Team (CERT-In)",
+      "title": "Directions and advisories on cyber incident reporting",
+      "url": "https://www.cert-in.org.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none"
+    },
+    {
+      "id": "S005",
+      "type": "primary_regulator",
+      "publisher": "Ministry of Corporate Affairs (MCA)",
+      "title": "Company incorporation and post-incorporation compliance",
+      "url": "https://www.mca.gov.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none"
+    }
+  ],
+  "confidence": {
+    "overall": 0.62,
+    "basis": "Obligations are anchored to named primary regulators, but applicability to this specific product requires professional confirmation.",
+    "low_confidence_area_ids": [
+      "A001",
+      "E001"
+    ]
+  },
+  "coverage": {
+    "required_sections_present": [
+      "data_protection",
+      "tax",
+      "entity",
+      "incident_response"
+    ],
+    "unanswered_questions": [
+      "Does the final data model include any children's data or financial account identifiers?"
+    ]
+  }
+}

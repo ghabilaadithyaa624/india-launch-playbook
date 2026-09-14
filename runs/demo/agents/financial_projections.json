@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "5d1f0f4e-6a2b-4c3d-8e9f-0a1b2c3d4e5f",
+  "agent": {
+    "id": "financial_projections",
+    "name": "Financial Projections & Pricing",
+    "version": "1.0.0",
+    "model": "claude-opus-5",
+    "prompt_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "generated_at": "2026-09-14T06:02:00.000Z",
+  "input_digest": "c242515ea4075853fbdfa43a262f1104347569829a2d27265e2368bd951d3f1c",
+  "executive_summary": "Unit economics are workable only if average revenue per account clears roughly INR 2,000 per month at a blended acquisition cost under INR 9,000. Both figures are estimates, not measurements. GST treatment of a SaaS subscription must be confirmed with a chartered accountant before any price is published, since the tax treatment changes the net realisation per account.",
+  "facts": [
+    {
+      "id": "F001",
+      "statement": "GST rates, invoicing rules and return-filing obligations applicable to software subscriptions are published on the official GST portal.",
+      "value": null,
+      "unit": null,
+      "as_of": "2026-09-14",
+      "source_ids": [
+        "S006"
+      ],
+      "verification": "primary_source_verified"
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "A001",
+      "statement": "Roughly 12% of manufacturing SMEs in the target cities will actively seek to replace spreadsheet GST workflows within 18 months.",
+      "rationale": "Shared demand assumption inherited from the market research workstream; not independently validated.",
+      "impact_if_wrong": "critical",
+      "validation_method": "Same discovery interview programme; do not treat as validated until interviews complete."
+    },
+    {
+      "id": "A002",
+      "statement": "Monthly logo churn stabilises at or below 3% after the first 90 days of onboarding.",
+      "rationale": "Compliance tooling is sticky once filing history accumulates, but this segment has no observed retention data yet.",
+      "impact_if_wrong": "high",
+      "validation_method": "Measure cohort retention monthly from first paying cohort; revisit the model at 6 months."
+    }
+  ],
+  "estimates": [
+    {
+      "id": "E001",
+      "metric": "average revenue per account per month",
+      "low": 6000,
+      "base": 8200,
+      "high": 11000,
+      "unit": "INR",
+      "method": "top_down",
+      "depends_on": [
+        "A001",
+        "A002"
+      ]
+    },
+    {
+      "id": "E002",
+      "metric": "customer acquisition cost blended",
+      "low": 4500,
+      "base": 8800,
+      "high": 15000,
+      "unit": "INR",
+      "method": "benchmark",
+      "depends_on": [
+        "A002"
+      ]
+    },
+    {
+      "id": "E003",
+      "metric": "months to operating break even",
+      "low": 18,
+      "base": 26,
+      "high": 40,
+      "unit": "months",
+      "method": "bottom_up",
+      "depends_on": [
+        "A001",
+        "A002"
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "R001",
+      "action": "Confirm GST treatment and input tax credit handling for subscription billing with a chartered accountant before publishing prices.",
+      "priority": "P0",
+      "owner_role": "Founder",
+      "effort": "S",
+      "rationale_ids": [
+        "F001"
+      ],
+      "requires_professional_review": true
+    },
+    {
+      "id": "R002",
+      "action": "Instrument cohort retention from the first paying customer so the churn assumption can be replaced with measured data by month six.",
+      "priority": "P1",
+      "owner_role": "Product lead",
+      "effort": "M",
+      "rationale_ids": [
+        "A002",
+        "E003"
+      ],
+      "requires_professional_review": false
+    }
+  ],
+  "risks": [
+    {
+      "id": "K001",
+      "description": "Break-even timing depends on two unvalidated assumptions simultaneously, so the runway requirement could be understated by a wide margin.",
+      "category": "financial",
+      "likelihood": 4,
+      "impact": 5,
+      "mitigation": "Hold a 9-month cash buffer beyond the base-case plan and re-forecast at every cohort milestone.",
+      "early_warning_indicator": "Month-3 churn above 5% or ARPA below the low estimate."
+    }
+  ],
+  "dependencies": [
+    {
+      "agent_id": "market_research",
+      "relationship": "requires",
+      "note": "Demand sizing drives the revenue model."
+    },
+    {
+      "agent_id": "market_research",
+      "relationship": "may_contradict",
+      "note": "ARPA estimated top-down here versus bottom-up in market research."
+    }
+  ],
+  "sources": [
+    {
+      "id": "S006",
+      "type": "primary_regulator",
+      "publisher": "Goods and Services Tax Network",
+      "title": "GST registration, returns and rates",
+      "url": "https://www.gst.gov.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none"
+    }
+  ],
+  "confidence": {
+    "overall": 0.45,
+    "basis": "Tax mechanics are source-backed, but every revenue and cost number is an estimate resting on unvalidated assumptions.",
+    "low_confidence_area_ids": [
+      "E001",
+      "E003",
+      "A002"
+    ]
+  },
+  "coverage": {
+    "required_sections_present": [
+      "pricing",
+      "unit_economics",
+      "break_even"
+    ],
+    "unanswered_questions": [
+      "What is the realistic annual prepay rate in this segment?"
+    ]
+  }
+}

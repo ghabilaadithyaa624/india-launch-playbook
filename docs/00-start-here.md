@@ -7,7 +7,7 @@ This is a practical decision guide for founders, freelancers, agencies and first
 
 ## How to use this playbook
 
-Read Parts 1–3 before choosing a build approach. Complete the checklists in Parts 4–6 while you build. Use the templates in Part 7 to brief a developer or agency. For a marketplace, payments, health, finance, location tracking or children's data, treat the compliance pages as a conversation starter — not a substitute for advice.
+Read sections `01`–`06` before choosing a build approach. Work through the checklists in `07`–`11` while you build. Use the files in [`templates/`](../templates/) to brief a developer or agency. For a marketplace, payments, health, finance, location tracking or children's data, treat the compliance pages as a conversation starter — not a substitute for advice.
 
 ## What this edition improves
 

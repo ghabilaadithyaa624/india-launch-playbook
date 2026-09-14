@@ -1,0 +1,8 @@
+{
+  "business_idea": "A subscription B2B SaaS platform that helps small Indian manufacturing firms manage GST-compliant invoicing, e-way bills and vendor payment reconciliation from a single dashboard.",
+  "sector": "B2B SaaS",
+  "target_customer": "Owner-operators and finance managers at Indian manufacturing SMEs with 10-200 employees",
+  "geography": ["Pune", "Ahmedabad", "Coimbatore", "Delhi-NCR"],
+  "budget_band": "25L_1Cr",
+  "stage": "prototype"
+}

@@ -5,9 +5,19 @@ Thumbs.db
 .vscode/
 .idea/
 
-# If this repo grows to hold an actual codebase alongside the docs:
+# Dependencies and build output
 node_modules/
-.env
-.env.local
 dist/
 build/
+
+# Secrets — never commit
+.env
+.env.local
+.env.*.local
+
+# Generated pipeline output (the committed demo run is the documented exception)
+runs/*
+!runs/demo/
+pdfs/
+*.zip
+outputs/
