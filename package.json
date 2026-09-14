@@ -1,0 +1,27 @@
+{
+  "name": "india-launch-playbook",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "India Launch Playbook — human handbook + evidence-gated multi-agent document generator",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "sourcepack": "node src/cli/build-sourcepack.mjs",
+    "validate:agent": "node src/cli/validate-agent.mjs",
+    "synthesize": "node src/cli/synthesize.mjs",
+    "render": "node src/cli/render.mjs",
+    "publish": "node src/cli/publish.mjs",
+    "pipeline": "node src/cli/pipeline.mjs",
+    "demo": "node src/cli/pipeline.mjs --run-dir runs/demo --agents test/fixtures/agents --force",
+    "lint:docs": "node src/cli/lint-docs.mjs",
+    "guard:paths": "node src/cli/guard-paths.mjs",
+    "test": "node --test test/**/*.test.mjs"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "js-yaml": "^4.1.0"
+  }
+}

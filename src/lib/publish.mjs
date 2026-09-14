@@ -1,0 +1,155 @@
+/**
+ * GITHUB PUBLISHING — safe by construction.
+ *
+ * Replaces the broken node that did `POST .../contents/docs` with body `{}`
+ * (wrong verb, directory URL, no base64, no sha, no branch, straight to main).
+ *
+ * Guarantees:
+ *   - writes ONLY under OUTPUT_PATH_PREFIX (default `runs/`)
+ *   - NEVER writes to main; always a `run/<run_id>` branch + pull request
+ *   - refuses to touch protected curated paths
+ *   - one atomic commit via the Git Trees API (no per-file sha races)
+ *   - dry-run unless PUBLISH_ENABLED=1
+ */
+
+import { sha256 } from './util.mjs';
+
+/** Curated, human-authored paths that automation must never modify. */
+export const PROTECTED_PATHS = [
+  'README.md',
+  'AGENTS.md',
+  'docs/00-start-here.md',
+  'docs/01-choose-website-model.md',
+  'docs/02-define-offer-and-scope.md',
+  'docs/03-core-product-documents.md',
+  'docs/04-design-customer-journey.md',
+  'docs/05-choose-stack-and-dev-route.md',
+  'docs/06-build-securely-operate-reliably.md',
+  'docs/07-security-privacy-trust.md',
+  'docs/08-india-launch-readiness.md',
+  'docs/09-payments-messaging-support.md',
+  'docs/10-budget-and-timeline.md',
+  'docs/11-launch-gates.md',
+];
+
+export const PROTECTED_PREFIXES = ['templates/', 'worksheets/', 'reference/', 'docs/', 'schemas/', 'src/', 'config/'];
+
+/**
+ * Enforce the write allowlist. Throws on any violation.
+ * @param {string[]} paths
+ * @param {string} prefix
+ */
+export function assertPathsAllowed(paths, prefix = 'runs/') {
+  const violations = [];
+  for (const p of paths) {
+    const norm = p.replace(/\\/g, '/').replace(/^\.\//, '');
+    if (norm.includes('..')) { violations.push(`${p}: path traversal`); continue; }
+    if (norm.startsWith('/')) { violations.push(`${p}: absolute path`); continue; }
+    if (PROTECTED_PATHS.includes(norm)) { violations.push(`${p}: protected file`); continue; }
+    if (!norm.startsWith(prefix)) {
+      const hitPrefix = PROTECTED_PREFIXES.find((pp) => norm.startsWith(pp));
+      violations.push(`${p}: outside allowlist "${prefix}"${hitPrefix ? ` (protected area ${hitPrefix})` : ''}`);
+    }
+  }
+  if (violations.length) {
+    const err = new Error(`Publish blocked — ${violations.length} path violation(s):\n  - ${violations.join('\n  - ')}`);
+    err.violations = violations;
+    throw err;
+  }
+  return true;
+}
+
+async function gh(token, method, path, body) {
+  const res = await globalThis.fetch(`https://api.github.com${path}`, {
+    method,
+    headers: {
+      accept: 'application/vnd.github+json',
+      authorization: `Bearer ${token}`,
+      'x-github-api-version': '2022-11-28',
+      'content-type': 'application/json',
+      'user-agent': 'india-launch-playbook/2.0',
+    },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  const text = await res.text();
+  let json = null;
+  try { json = text ? JSON.parse(text) : null; } catch { /* non-json */ }
+  if (!res.ok) {
+    throw new Error(`GitHub ${method} ${path} -> ${res.status}: ${json?.message ?? text.slice(0, 300)}`);
+  }
+  return json;
+}
+
+/**
+ * @param {object} opts
+ * @param {{path:string,content:string}[]} opts.files  paths relative to repo root
+ * @param {string} opts.runId
+ * @param {object} opts.env  { GITHUB_TOKEN, GITHUB_REPO, GITHUB_BASE_BRANCH, OUTPUT_PATH_PREFIX, PUBLISH_ENABLED }
+ */
+export async function publishRun({ files, runId, env }) {
+  const prefix = env.OUTPUT_PATH_PREFIX || 'runs/';
+  assertPathsAllowed(files.map((f) => f.path), prefix);
+
+  const plan = {
+    branch: `run/${runId}`,
+    base: env.GITHUB_BASE_BRANCH || 'main',
+    repo: env.GITHUB_REPO,
+    files: files.map((f) => ({ path: f.path, bytes: Buffer.byteLength(f.content, 'utf8'), sha256: sha256(f.content) })),
+  };
+
+  if (env.PUBLISH_ENABLED !== '1') {
+    return { dryRun: true, plan, message: 'PUBLISH_ENABLED != 1 — dry run only, nothing written to GitHub.' };
+  }
+  if (!env.GITHUB_TOKEN) throw new Error('GITHUB_TOKEN is not set.');
+  if (!env.GITHUB_REPO) throw new Error('GITHUB_REPO is not set.');
+
+  const token = env.GITHUB_TOKEN;
+  const repo = env.GITHUB_REPO;
+  const base = plan.base;
+
+  // 1. base commit
+  const baseRef = await gh(token, 'GET', `/repos/${repo}/git/ref/heads/${base}`);
+  const baseSha = baseRef.object.sha;
+  const baseCommit = await gh(token, 'GET', `/repos/${repo}/git/commits/${baseSha}`);
+
+  // 2. blobs
+  const tree = [];
+  for (const f of files) {
+    const blob = await gh(token, 'POST', `/repos/${repo}/git/blobs`, {
+      content: Buffer.from(f.content, 'utf8').toString('base64'),
+      encoding: 'base64',
+    });
+    tree.push({ path: f.path, mode: '100644', type: 'blob', sha: blob.sha });
+  }
+
+  // 3. one atomic tree + commit
+  const newTree = await gh(token, 'POST', `/repos/${repo}/git/trees`, {
+    base_tree: baseCommit.tree.sha, tree,
+  });
+  const commit = await gh(token, 'POST', `/repos/${repo}/git/commits`, {
+    message: `run(${runId}): generated India launch playbook\n\nGenerated by the multi-agent pipeline. Review before merge.`,
+    tree: newTree.sha,
+    parents: [baseSha],
+  });
+
+  // 4. branch (never main)
+  await gh(token, 'POST', `/repos/${repo}/git/refs`, {
+    ref: `refs/heads/${plan.branch}`, sha: commit.sha,
+  });
+
+  // 5. PR for human review
+  const pr = await gh(token, 'POST', `/repos/${repo}/pulls`, {
+    title: `Generated playbook — run ${runId}`,
+    head: plan.branch,
+    base,
+    body: [
+      `Automated output of the India Launch Playbook pipeline.`, '',
+      `- **Run:** \`${runId}\``,
+      `- **Files:** ${files.length}`, '',
+      `⚠️ AI-generated. Verify facts against the source register before merging.`,
+      `Facts cite sources; assumptions and estimates are explicitly labelled as not evidence.`,
+    ].join('\n'),
+  });
+
+  return { dryRun: false, plan, commit: commit.sha, branch: plan.branch, pr: pr.html_url };
+}

@@ -1,3 +1,31 @@
+<!-- lint-disable:statutes — historical artifact; errors are annotated in the banner below, not corrected in the body -->
+> # ⚠️ ILLUSTRATIVE SAMPLE — NOT GUIDANCE, NOT A PRODUCT OF THE CURRENT PIPELINE
+>
+> This file is retained as an **example of the old, pre-contract output format**
+> and as a worked illustration of what a finished playbook can look like.
+>
+> **Do not rely on anything in it.** Specifically:
+>
+> - **It is truncated.** The file ends mid-table in section 11. Section 12
+>   ("Launch Governance Dashboard") is referenced but does not exist.
+> - **Its figures are unsourced.** The "Source" column cites things like
+>   "Market-research firm (2024)" and "Primary consumer survey (n = 2,400)".
+>   No such firm is named and **no such survey exists in this repository**.
+> - **It contains a factual error.** Section 3 cites "IT Act 2021, PDPB draft".
+>   The Information Technology Act is **2000**; the Personal Data Protection
+>   Bill was **withdrawn in August 2022** and replaced by the
+>   **Digital Personal Data Protection Act, 2023**. See `docs/08-india-launch-readiness.md`.
+> - **It is industry-specific** (plant-based protein food) and does not
+>   generalise to other businesses.
+> - **Its internal numbers disagree** — e.g. a stated gross margin of >= 45%
+>   alongside a cost build implying 35%.
+>
+> Current pipeline output separates **facts** (source-backed) from
+> **assumptions** and **estimates**, and is validated before it is written.
+> See `PIPELINE.md` and `runs/demo/MASTER-PLAYBOOK.md`.
+
+---
+
 # **India Launch Playbook – Plant‑Based Protein Food Brand**  
 **Version 1.0 – Prepared for Executive Leadership**  
 *(Integrates operational, financial, and risk analyses from prior workstreams)*  
@@ -147,3 +175,7 @@
 | **PR & Thought‑Leadership** | Press releases, nutritionist op‑eds, sustainability story. | 5 % | Share‑of‑voice ≥ 12 %; Earned media value ≥ ₹ 5 mn. |
 | **Events & Health‑Fairs** | Booths at “Fit India” expo, college health festivals. | 5 % | Leads generated ≥ 10 k; conversion ≥ 5 %. |
 | **Loyalty &
+
+---
+
+_[Document truncated in the original generation — retained verbatim above.]_

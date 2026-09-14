@@ -1,0 +1,361 @@
+{
+  "pack_version": "1.0.0",
+  "built_at": "2026-09-14T09:10:27.911Z",
+  "mode": "offline",
+  "allowed_domains": [
+    "meity.gov.in",
+    "trai.gov.in",
+    "rbi.org.in",
+    "cert-in.org.in",
+    "mca.gov.in",
+    "gst.gov.in",
+    "udyamregistration.gov.in",
+    "ipindia.gov.in",
+    "fssai.gov.in",
+    "dgft.gov.in",
+    "mospi.gov.in",
+    "censusindia.gov.in",
+    "indiabudget.gov.in",
+    "labour.gov.in",
+    "epfindia.gov.in",
+    "esic.gov.in"
+  ],
+  "agent_topics": {
+    "market_research": [
+      "market_research",
+      "demographics",
+      "income",
+      "gdp",
+      "consumption",
+      "urban_rural",
+      "population",
+      "macro"
+    ],
+    "regulatory_compliance": [
+      "regulatory_compliance",
+      "privacy",
+      "data_protection",
+      "tax",
+      "gst",
+      "entity",
+      "incorporation",
+      "licensing",
+      "hr",
+      "employment",
+      "security"
+    ],
+    "market_entry": [
+      "entity",
+      "incorporation",
+      "import",
+      "export",
+      "sector_policy",
+      "regulatory_compliance"
+    ],
+    "competitive_landscape": [
+      "market_research",
+      "sector_policy"
+    ],
+    "go_to_market": [
+      "messaging",
+      "sms",
+      "whatsapp",
+      "marketing",
+      "payments",
+      "brand",
+      "trademark"
+    ],
+    "financial_projections": [
+      "tax",
+      "gst",
+      "payments",
+      "income",
+      "consumption",
+      "macro"
+    ],
+    "risk_management": [
+      "security",
+      "incident_response",
+      "regulatory_compliance",
+      "privacy",
+      "payments"
+    ],
+    "implementation_roadmap": [
+      "entity",
+      "incorporation",
+      "licensing",
+      "regulatory_compliance"
+    ]
+  },
+  "sources": [
+    {
+      "id": "S001",
+      "key": "dpdp_act",
+      "type": "primary_regulator",
+      "publisher": "Ministry of Electronics and Information Technology (MeitY)",
+      "title": "Digital Personal Data Protection Act, 2023 and Rules",
+      "url": "https://www.meity.gov.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none",
+      "topics": [
+        "privacy",
+        "data_protection",
+        "consent",
+        "regulatory_compliance"
+      ],
+      "note": "Staged commencement. Determine which provisions apply on the planned launch date. Do not reproduce legacy \"deadline\" claims.\n",
+      "excerpt": null
+    },
+    {
+      "id": "S002",
+      "key": "trai_dlt",
+      "type": "primary_regulator",
+      "publisher": "Telecom Regulatory Authority of India (TRAI)",
+      "title": "Commercial communications / DLT registration guidance",
+      "url": "https://trai.gov.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none",
+      "topics": [
+        "messaging",
+        "sms",
+        "whatsapp",
+        "marketing",
+        "regulatory_compliance"
+      ],
+      "note": null,
+      "excerpt": null
+    },
+    {
+      "id": "S003",
+      "key": "rbi_payments",
+      "type": "primary_regulator",
+      "publisher": "Reserve Bank of India (RBI)",
+      "title": "Payment and Settlement Systems — notifications and master directions",
+      "url": "https://www.rbi.org.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none",
+      "topics": [
+        "payments",
+        "payment_aggregator",
+        "kyc",
+        "settlement",
+        "regulatory_compliance"
+      ],
+      "note": null,
+      "excerpt": null
+    },
+    {
+      "id": "S004",
+      "key": "certin_directions",
+      "type": "primary_regulator",
+      "publisher": "Indian Computer Emergency Response Team (CERT-In)",
+      "title": "Directions and advisories on cyber incident reporting",
+      "url": "https://www.cert-in.org.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none",
+      "topics": [
+        "security",
+        "incident_response",
+        "logging",
+        "regulatory_compliance"
+      ],
+      "note": null,
+      "excerpt": null
+    },
+    {
+      "id": "S005",
+      "key": "mca_incorporation",
+      "type": "primary_regulator",
+      "publisher": "Ministry of Corporate Affairs (MCA)",
+      "title": "Company incorporation and post-incorporation compliance",
+      "url": "https://www.mca.gov.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none",
+      "topics": [
+        "entity",
+        "incorporation",
+        "regulatory_compliance"
+      ],
+      "note": null,
+      "excerpt": null
+    },
+    {
+      "id": "S006",
+      "key": "gst_portal",
+      "type": "primary_regulator",
+      "publisher": "Goods and Services Tax Network",
+      "title": "GST registration, returns and rates",
+      "url": "https://www.gst.gov.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none",
+      "topics": [
+        "tax",
+        "gst",
+        "invoicing",
+        "regulatory_compliance"
+      ],
+      "note": null,
+      "excerpt": null
+    },
+    {
+      "id": "S007",
+      "key": "udyam_msme",
+      "type": "primary_regulator",
+      "publisher": "Ministry of MSME",
+      "title": "Udyam registration for micro, small and medium enterprises",
+      "url": "https://udyamregistration.gov.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none",
+      "topics": [
+        "entity",
+        "msme",
+        "regulatory_compliance"
+      ],
+      "note": null,
+      "excerpt": null
+    },
+    {
+      "id": "S008",
+      "key": "ip_india",
+      "type": "primary_regulator",
+      "publisher": "Office of the Controller General of Patents, Designs and Trade Marks",
+      "title": "Trademark search and filing",
+      "url": "https://ipindia.gov.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none",
+      "topics": [
+        "brand",
+        "trademark",
+        "ip",
+        "regulatory_compliance"
+      ],
+      "note": null,
+      "excerpt": null
+    },
+    {
+      "id": "S009",
+      "key": "fssai",
+      "type": "primary_regulator",
+      "publisher": "Food Safety and Standards Authority of India (FSSAI)",
+      "title": "Food business licensing, labelling and claims",
+      "url": "https://www.fssai.gov.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none",
+      "topics": [
+        "food",
+        "licensing",
+        "labelling",
+        "claims",
+        "regulatory_compliance"
+      ],
+      "note": null,
+      "excerpt": null
+    },
+    {
+      "id": "S010",
+      "key": "dgft",
+      "type": "primary_regulator",
+      "publisher": "Directorate General of Foreign Trade (DGFT)",
+      "title": "Import/export policy and licensing",
+      "url": "https://www.dgft.gov.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none",
+      "topics": [
+        "import",
+        "export",
+        "customs",
+        "supply_chain"
+      ],
+      "note": null,
+      "excerpt": null
+    },
+    {
+      "id": "S011",
+      "key": "mospi",
+      "type": "government_statistics",
+      "publisher": "Ministry of Statistics and Programme Implementation (MoSPI)",
+      "title": "National accounts, consumption and household survey statistics",
+      "url": "https://www.mospi.gov.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none",
+      "topics": [
+        "market_research",
+        "demographics",
+        "income",
+        "gdp",
+        "consumption"
+      ],
+      "note": null,
+      "excerpt": null
+    },
+    {
+      "id": "S012",
+      "key": "census_india",
+      "type": "government_statistics",
+      "publisher": "Office of the Registrar General & Census Commissioner",
+      "title": "Census of India — population and urbanisation data",
+      "url": "https://censusindia.gov.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none",
+      "topics": [
+        "market_research",
+        "demographics",
+        "urban_rural",
+        "population"
+      ],
+      "note": null,
+      "excerpt": null
+    },
+    {
+      "id": "S013",
+      "key": "economic_survey",
+      "type": "government_statistics",
+      "publisher": "Government of India, Ministry of Finance",
+      "title": "Economic Survey and Union Budget documents",
+      "url": "https://www.indiabudget.gov.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none",
+      "topics": [
+        "market_research",
+        "gdp",
+        "sector_policy",
+        "macro"
+      ],
+      "note": null,
+      "excerpt": null
+    },
+    {
+      "id": "S014",
+      "key": "labour_codes",
+      "type": "primary_regulator",
+      "publisher": "Ministry of Labour and Employment",
+      "title": "Labour codes, wages and employment regulation",
+      "url": "https://labour.gov.in/",
+      "published_at": null,
+      "accessed_at": "2026-09-14",
+      "retrieval_method": "none",
+      "topics": [
+        "hr",
+        "employment",
+        "wages",
+        "regulatory_compliance"
+      ],
+      "note": null,
+      "excerpt": null
+    }
+  ],
+  "notes": []
+}

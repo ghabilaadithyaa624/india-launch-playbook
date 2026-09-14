@@ -1,0 +1,103 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install
+        run: npm ci || npm install
+
+      - name: Unit + contract tests
+        run: npm test
+
+      - name: Validate fixture agent outputs
+        run: npm run validate:agent -- test/fixtures/agents
+
+      - name: Documentation lint (statutes, links, secrets)
+        run: npm run lint:docs
+
+      - name: End-to-end pipeline (offline, dry-run publish)
+        run: npm run demo
+
+      - name: Reproducibility — identical input must yield identical bytes
+        env:
+          SOURCE_DATE_EPOCH: '1757836800'
+        run: |
+          RID=11111111-2222-4333-8444-555555555555
+          node src/cli/pipeline.mjs --run-dir runs/_ci1 --run-id $RID --force >/dev/null
+          node src/cli/pipeline.mjs --run-dir runs/_ci2 --run-id $RID --force >/dev/null
+          fail=0
+          for f in $(cd runs/_ci1 && find . -type f | sort); do
+            a=$(sha256sum "runs/_ci1/$f" | cut -d' ' -f1)
+            b=$(sha256sum "runs/_ci2/$f" | cut -d' ' -f1)
+            sz=$(stat -c%s "runs/_ci1/$f")
+            if [ -z "$a" ] || [ "$a" != "$b" ] || [ "$sz" -eq 0 ]; then
+              echo "NOT REPRODUCIBLE: $f"; fail=1
+            fi
+          done
+          rm -rf runs/_ci1 runs/_ci2
+          exit $fail
+
+      - name: n8n workflow structural check
+        run: |
+          node -e '
+            const wf = require("./N8N_COMPLETE_WORKFLOW.json");
+            const names = new Set(wf.nodes.map(n => n.name));
+            const problems = [];
+            for (const [k, v] of Object.entries(wf.connections)) {
+              if (!names.has(k)) problems.push("connection key not a node name: " + k);
+              for (const out of v.main) for (const c of out)
+                if (!names.has(c.node)) problems.push("connection target not a node name: " + c.node);
+            }
+            if (wf.active !== false) problems.push("workflow must import inactive");
+            for (const n of wf.nodes) {
+              if (n.type.endsWith(".function")) problems.push("legacy Function node: " + n.name);
+              if (typeof n.credentials?.bearerToken === "string")
+                problems.push("literal credential string in node: " + n.name);
+              if (n.type.endsWith(".httpRequest") && n.parameters.sendBody && !n.parameters.jsonBody)
+                problems.push("httpRequest sends body without jsonBody: " + n.name);
+            }
+            if (problems.length) { console.error(problems.join("\n")); process.exit(1); }
+            console.log("n8n workflow OK — " + wf.nodes.length + " nodes, all connections resolve by name");
+          '
+
+  guard-protected-paths:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Block automated edits to curated documentation
+        run: |
+          # Generated runs must never modify the human-authored handbook.
+          if [ "${{ github.actor }}" != "github-actions[bot]" ]; then
+            echo "Human PR — curated-path guard is advisory."
+            GUARD_MODE=warn
+          else
+            GUARD_MODE=block
+          fi
+          CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+          echo "$CHANGED"
+          PROTECTED=$(echo "$CHANGED" | grep -E '^(README\.md|docs/(0[0-9]|1[01])-|templates/|worksheets/|reference/)' || true)
+          if [ -n "$PROTECTED" ] && [ "$GUARD_MODE" = "block" ]; then
+            echo "::error::Automated PR modifies curated paths:"; echo "$PROTECTED"; exit 1
+          fi
+          if [ -n "$PROTECTED" ]; then
+            echo "::warning::This PR touches curated documentation:"; echo "$PROTECTED"
+          fi
