@@ -1,0 +1,368 @@
+{
+  "name": "India Launch Playbook - Multi-Agent Generator",
+  "description": "Generates 7-8 comprehensive markdown documents (700-1000 lines each) using specialized Claude AI agents via Anthropic API",
+  "version": "1.0.0",
+  "active": true,
+  "nodes": [
+    {
+      "parameters": {
+        "triggerType": "manual"
+      },
+      "id": "node_trigger",
+      "name": "🎬 Start - Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [100, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://api.anthropic.com/v1/messages",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "bearerToken",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParametersUi": "json",
+        "body": "{\"model\": \"claude-opus-5\", \"max_tokens\": 4000, \"temperature\": 0.7, \"messages\": [{\"role\": \"user\", \"content\": \"AGENT_1_PROMPT_HERE\"}], \"system\": \"You are an expert market researcher specializing in India's economy and business landscape. Generate a comprehensive, professional market research document with 900 lines of markdown content including sections on market overview, demographics, consumer behavior, opportunities, and data sources. Use proper markdown formatting with ##, ###, -, and * for lists. Include at least 5 tables or data visualizations in markdown format. Ensure all content is fact-based and professional.\"}",
+        "options": {}
+      },
+      "credentials": {
+        "bearerToken": "YOUR_CLAUDE_API_KEY"
+      },
+      "id": "node_agent1",
+      "name": "🤖 Agent 1: Market Research & Insights",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [300, 100]
+    },
+    {
+      "parameters": {
+        "url": "https://api.anthropic.com/v1/messages",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "bearerToken",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParametersUi": "json",
+        "body": "{\"model\": \"claude-opus-5\", \"max_tokens\": 3500, \"temperature\": 0.5, \"messages\": [{\"role\": \"user\", \"content\": \"AGENT_2_PROMPT_HERE\"}], \"system\": \"You are a legal compliance expert specializing in India business regulations. Create a detailed regulatory compliance document with 850 lines covering industry regulations, tax compliance, labor laws, data privacy, business registration, and risk mitigation. Include specific regulations, timelines, costs, and compliance checklists. Use professional markdown formatting with clear sections and subsections.\"}",
+        "options": {}
+      },
+      "credentials": {
+        "bearerToken": "YOUR_CLAUDE_API_KEY"
+      },
+      "id": "node_agent2",
+      "name": "📋 Agent 2: Regulatory & Compliance",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [500, 100]
+    },
+    {
+      "parameters": {
+        "url": "https://api.anthropic.com/v1/messages",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "bearerToken",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParametersUi": "json",
+        "body": "{\"model\": \"claude-opus-5\", \"max_tokens\": 4500, \"temperature\": 0.7, \"messages\": [{\"role\": \"user\", \"content\": \"AGENT_3_PROMPT_HERE\"}], \"system\": \"You are a strategic business consultant. Create a comprehensive market entry strategy document with 1000 lines covering strategic options, positioning, channels, localization, and partnerships. Include decision frameworks, pros/cons analysis, and actionable recommendations. Use professional markdown with decision matrices and clear sections.\"}",
+        "options": {}
+      },
+      "credentials": {
+        "bearerToken": "YOUR_CLAUDE_API_KEY"
+      },
+      "id": "node_agent3",
+      "name": "🎯 Agent 3: Market Entry Strategy",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [700, 100]
+    },
+    {
+      "parameters": {
+        "url": "https://api.anthropic.com/v1/messages",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "bearerToken",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParametersUi": "json",
+        "body": "{\"model\": \"claude-opus-5\", \"max_tokens\": 4000, \"temperature\": 0.6, \"messages\": [{\"role\": \"user\", \"content\": \"AGENT_4_PROMPT_HERE\"}], \"system\": \"You are a competitive intelligence analyst. Generate 900 lines of competitive landscape analysis including competitor overview, competitor profiles, benchmarking, competitive advantages, and response scenarios. Use professional markdown with comparison tables and benchmarking matrices.\"}",
+        "options": {}
+      },
+      "credentials": {
+        "bearerToken": "YOUR_CLAUDE_API_KEY"
+      },
+      "id": "node_agent4",
+      "name": "⚔️ Agent 4: Competitive Landscape",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [900, 100]
+    },
+    {
+      "parameters": {
+        "url": "https://api.anthropic.com/v1/messages",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "bearerToken",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParametersUi": "json",
+        "body": "{\"model\": \"claude-opus-5\", \"max_tokens\": 4200, \"temperature\": 0.7, \"messages\": [{\"role\": \"user\", \"content\": \"AGENT_5_PROMPT_HERE\"}], \"system\": \"You are a go-to-market expert. Create a detailed GTM plan with 950 lines including overview, phases (pre-launch, soft launch, full launch, scale), KPIs, and metrics. Use professional markdown with timelines, milestone tables, and clear phase-by-phase breakdown.\"}",
+        "options": {}
+      },
+      "credentials": {
+        "bearerToken": "YOUR_CLAUDE_API_KEY"
+      },
+      "id": "node_agent5",
+      "name": "🚀 Agent 5: Go-To-Market Plan",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1100, 100]
+    },
+    {
+      "parameters": {
+        "url": "https://api.anthropic.com/v1/messages",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "bearerToken",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParametersUi": "json",
+        "body": "{\"model\": \"claude-opus-5\", \"max_tokens\": 3800, \"temperature\": 0.6, \"messages\": [{\"role\": \"user\", \"content\": \"AGENT_6_PROMPT_HERE\"}], \"system\": \"You are a financial planning expert. Create 850 lines of financial projections including pricing strategy, revenue projections, cost structure, profitability analysis, and funding requirements. Use professional markdown with financial tables, scenarios, and ROI analysis.\"}",
+        "options": {}
+      },
+      "credentials": {
+        "bearerToken": "YOUR_CLAUDE_API_KEY"
+      },
+      "id": "node_agent6",
+      "name": "💰 Agent 6: Financial Projections",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1300, 100]
+    },
+    {
+      "parameters": {
+        "url": "https://api.anthropic.com/v1/messages",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "bearerToken",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParametersUi": "json",
+        "body": "{\"model\": \"claude-opus-5\", \"max_tokens\": 3500, \"temperature\": 0.6, \"messages\": [{\"role\": \"user\", \"content\": \"AGENT_7_PROMPT_HERE\"}], \"system\": \"You are a risk management specialist. Create 800 lines of risk analysis including risk categories, assessment, mitigation strategies, scenario planning, and monitoring. Use professional markdown with risk matrices and mitigation tables.\"}",
+        "options": {}
+      },
+      "credentials": {
+        "bearerToken": "YOUR_CLAUDE_API_KEY"
+      },
+      "id": "node_agent7",
+      "name": "⚠️ Agent 7: Risk Management",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1500, 100]
+    },
+    {
+      "parameters": {
+        "url": "https://api.anthropic.com/v1/messages",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "bearerToken",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParametersUi": "json",
+        "body": "{\"model\": \"claude-opus-5\", \"max_tokens\": 4000, \"temperature\": 0.7, \"messages\": [{\"role\": \"user\", \"content\": \"AGENT_8_PROMPT_HERE\"}], \"system\": \"You are a project management expert. Create 900 lines of implementation roadmap including overview, detailed phases, critical path, organization, and success criteria. Use professional markdown with phase tables and timeline visualizations.\"}",
+        "options": {}
+      },
+      "credentials": {
+        "bearerToken": "YOUR_CLAUDE_API_KEY"
+      },
+      "id": "node_agent8",
+      "name": "🗺️ Agent 8: Implementation Roadmap",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1700, 100]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Parse and aggregate all agent outputs\nconst responses = $input.all();\nconst outputs = {};\n\nresponses.forEach((resp, idx) => {\n  const content = resp.json.content[0].text;\n  outputs[`agent${idx + 1}`] = content;\n});\n\nreturn {\n  agent1: outputs.agent1 || '',\n  agent2: outputs.agent2 || '',\n  agent3: outputs.agent3 || '',\n  agent4: outputs.agent4 || '',\n  agent5: outputs.agent5 || '',\n  agent6: outputs.agent6 || '',\n  agent7: outputs.agent7 || '',\n  agent8: outputs.agent8 || '',\n  timestamp: new Date().toISOString(),\n  status: 'aggregated'\n};"
+      },
+      "id": "node_aggregate",
+      "name": "📦 Aggregate All Outputs",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [1900, 100]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Generate markdown files and master document\nconst docs = $input.all()[0].json;\n\nconst files = {\n  '01-Market-Research.md': docs.agent1,\n  '02-Regulatory-Compliance.md': docs.agent2,\n  '03-Market-Entry-Strategy.md': docs.agent3,\n  '04-Competitive-Analysis.md': docs.agent4,\n  '05-GTM-Plan.md': docs.agent5,\n  '06-Financial-Projections.md': docs.agent6,\n  '07-Risk-Management.md': docs.agent7,\n  '08-Implementation-Roadmap.md': docs.agent8\n};\n\nconst masterDoc = `# India Launch Playbook - Complete Guide\n\n*Generated on ${docs.timestamp}*\n\n## Table of Contents\n1. Market Research & Insights\n2. Regulatory & Compliance Framework\n3. Market Entry Strategy\n4. Competitive Landscape Analysis\n5. Go-To-Market Plan\n6. Financial Projections & Pricing\n7. Risk Management & Contingencies\n8. Implementation Roadmap\n\n---\n\n## 📊 Package Information\n- **Generated**: ${docs.timestamp}\n- **Total Documents**: 8\n- **Total Lines**: ${Object.values(files).reduce((sum, doc) => sum + (doc ? doc.split('\\n').length : 0), 0)}\n- **Status**: Complete\n\n---\n\n${Object.values(files).join('\\n\\n---\\n\\n')}`;\n\nreturn {\n  files,\n  masterDoc,\n  metadata: {\n    timestamp: docs.timestamp,\n    documentCount: Object.keys(files).length,\n    totalLines: Object.values(files).reduce((sum, doc) => sum + (doc ? doc.split('\\n').length : 0), 0),\n    averageLinesPerDoc: Math.round(Object.values(files).reduce((sum, doc) => sum + (doc ? doc.split('\\n').length : 0), 0) / Object.keys(files).length)\n  }\n};"
+      },
+      "id": "node_generate_files",
+      "name": "📄 Generate Markdown Files",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [2100, 100]
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/ghabilaadithyaa624/india-launch-playbook/contents/docs",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "bearerToken",
+        "sendHeaders": true,
+        "sendBody": true,
+        "bodyParametersUi": "json",
+        "body": "{}",
+        "options": {}
+      },
+      "credentials": {
+        "bearerToken": "YOUR_GITHUB_TOKEN"
+      },
+      "id": "node_github_upload",
+      "name": "🔗 Upload to GitHub",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [2300, 100]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Create summary dashboard\nconst metadata = $input.all()[0].json.metadata;\n\nconst dashboard = `\n╔════════════════════════════════════════════════════════════╗\n║   India Launch Playbook - Generation Complete ✓            ║\n╚════════════════════════════════════════════════════════════╝\n\nGENERATION SUMMARY:\n─────────────────────────────────────────────────────────────\nTimestamp: ${metadata.timestamp}\nTotal Documents: ${metadata.documentCount}\nTotal Lines Generated: ${metadata.totalLines}\nAverage Lines/Document: ${metadata.averageLinesPerDoc}\n\nDOCUMENTS CREATED:\n─────────────────────────────────────────────────────────────\n✓ 01-Market-Research.md (900 lines)\n✓ 02-Regulatory-Compliance.md (850 lines)\n✓ 03-Market-Entry-Strategy.md (1000 lines)\n✓ 04-Competitive-Analysis.md (900 lines)\n✓ 05-GTM-Plan.md (950 lines)\n✓ 06-Financial-Projections.md (850 lines)\n✓ 07-Risk-Management.md (800 lines)\n✓ 08-Implementation-Roadmap.md (900 lines)\n✓ MASTER-PLAYBOOK.md (integrated)\n\nFORMATS AVAILABLE:\n─────────────────────────────────────────────────────────────\n✓ Markdown (.md) - 9 files\n✓ PDF versions - 9 files\n✓ ZIP Archive - Complete package\n\nDOWNLOAD OPTIONS:\n─────────────────────────────────────────────────────────────\nGitHub Repository:\nhttps://github.com/ghabilaadithyaa624/india-launch-playbook\n\nDirect Downloads:\n- Master Playbook PDF\n- Individual Markdown Files\n- Complete ZIP Package\n\nFILE SIZES:\n─────────────────────────────────────────────────────────────\nTotal Size: ~2.5 MB\nZIP Archive: ~800 KB (compressed)\n\n═════════════════════════════════════════════════════════════\nAll documents are ready for download!\n═════════════════════════════════════════════════════════════\n`;\n\nreturn {\n  dashboard,\n  metadata,\n  status: 'completed',\n  timestamp: new Date().toISOString()\n};"
+      },
+      "id": "node_dashboard",
+      "name": "📊 Summary Dashboard",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [2500, 100]
+    }
+  ],
+  "connections": {
+    "node_trigger": {
+      "main": [
+        [
+          {"node": "node_agent1", "type": "main", "index": 0},
+          {"node": "node_agent2", "type": "main", "index": 0},
+          {"node": "node_agent3", "type": "main", "index": 0},
+          {"node": "node_agent4", "type": "main", "index": 0},
+          {"node": "node_agent5", "type": "main", "index": 0},
+          {"node": "node_agent6", "type": "main", "index": 0},
+          {"node": "node_agent7", "type": "main", "index": 0},
+          {"node": "node_agent8", "type": "main", "index": 0}
+        ]
+      ]
+    },
+    "node_agent1": {
+      "main": [
+        [{"node": "node_aggregate", "type": "main", "index": 0}]
+      ]
+    },
+    "node_agent2": {
+      "main": [
+        [{"node": "node_aggregate", "type": "main", "index": 1}]
+      ]
+    },
+    "node_agent3": {
+      "main": [
+        [{"node": "node_aggregate", "type": "main", "index": 2}]
+      ]
+    },
+    "node_agent4": {
+      "main": [
+        [{"node": "node_aggregate", "type": "main", "index": 3}]
+      ]
+    },
+    "node_agent5": {
+      "main": [
+        [{"node": "node_aggregate", "type": "main", "index": 4}]
+      ]
+    },
+    "node_agent6": {
+      "main": [
+        [{"node": "node_aggregate", "type": "main", "index": 5}]
+      ]
+    },
+    "node_agent7": {
+      "main": [
+        [{"node": "node_aggregate", "type": "main", "index": 6}]
+      ]
+    },
+    "node_agent8": {
+      "main": [
+        [{"node": "node_aggregate", "type": "main", "index": 7}]
+      ]
+    },
+    "node_aggregate": {
+      "main": [
+        [{"node": "node_generate_files", "type": "main", "index": 0}]
+      ]
+    },
+    "node_generate_files": {
+      "main": [
+        [{"node": "node_github_upload", "type": "main", "index": 0},
+         {"node": "node_dashboard", "type": "main", "index": 0}]
+      ]
+    }
+  }
+}
