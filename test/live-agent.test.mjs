@@ -33,6 +33,7 @@ const RUN = '11111111-2222-4333-8444-555555555555';
 test('provider is inferred from key shape', () => {
   assert.equal(detectProvider('sk-or-v1-abc'), 'openrouter');
   assert.equal(detectProvider('sk-ant-api03-abc'), 'anthropic');
+  assert.equal(detectProvider('cfat_abc12345'), 'cloudflare');
   assert.equal(detectProvider('nonsense'), null);
   assert.equal(detectProvider(''), null);
 });
@@ -48,6 +49,7 @@ test('an OpenRouter key does not route to the Anthropic endpoint', () => {
 test('each provider sends its own auth header and body shape', () => {
   const a = getProvider('anthropic');
   const o = getProvider('openrouter');
+  const c = getProvider('cloudflare');
 
   const ah = a.headers('sk-ant-x');
   assert.equal(ah['x-api-key'], 'sk-ant-x');
@@ -59,6 +61,9 @@ test('each provider sends its own auth header and body shape', () => {
   assert.equal(oh.Authorization, 'Bearer sk-or-x');
   assert.ok(!oh['x-api-key'], 'openrouter must not use x-api-key');
 
+  const ch = c.headers('cfat_x');
+  assert.equal(ch.Authorization, 'Bearer cfat_x');
+
   // Anthropic takes system top-level; OpenAI-compatible takes it as a message.
   const ab = a.body({ model: 'm', system: 'SYS', user: 'USR', maxTokens: 10 });
   assert.equal(ab.system, 'SYS');
@@ -68,6 +73,11 @@ test('each provider sends its own auth header and body shape', () => {
   assert.equal(ob.system, undefined);
   assert.equal(ob.messages[0].role, 'system');
   assert.equal(ob.messages[0].content, 'SYS');
+
+  const cb = c.body({ model: 'm', system: 'SYS', user: 'USR', maxTokens: 10 });
+  assert.equal(cb.system, undefined);
+  assert.equal(cb.messages[0].role, 'system');
+  assert.equal(cb.messages[0].content, 'SYS');
 });
 
 /* ---------------- transport ---------------- */
@@ -86,6 +96,25 @@ test('openrouter call sends Bearer auth and parses the OpenAI response shape', a
     const req = mock.requests.at(-1);
     assert.equal(req.url, '/v1/chat/completions');
     assert.equal(req.headers.authorization, 'Bearer sk-or-v1-test');
+    assert.equal(req.body.messages[0].role, 'system');
+    assert.ok(req.body.max_tokens > 0, 'max_tokens must be sent');
+  } finally { await mock.close(); }
+});
+
+test('cloudflare call sends Bearer auth and parses the response shape', async () => {
+  const mock = await startMock({ scenario: 'valid' });
+  try {
+    const r = await callModel({
+      provider: 'cloudflare', apiKey: 'cfat_test123', model: '@cf/meta/llama-3.3-70b-instruct-fp8-fast',
+      system: 'S', user: 'U', baseUrl: mock.baseUrl,
+    });
+    assert.ok(r.text.includes('executive_summary'));
+    assert.equal(r.stop_reason, 'stop');
+    assert.equal(r.usage.output_tokens, 900);
+
+    const req = mock.requests.at(-1);
+    assert.equal(req.url, '/chat/completions');
+    assert.equal(req.headers.authorization, 'Bearer cfat_test123');
     assert.equal(req.body.messages[0].role, 'system');
     assert.ok(req.body.max_tokens > 0, 'max_tokens must be sent');
   } finally { await mock.close(); }

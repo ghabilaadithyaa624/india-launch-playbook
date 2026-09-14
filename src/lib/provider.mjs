@@ -22,6 +22,7 @@ export function detectProvider(apiKey) {
   if (!apiKey) return null;
   if (apiKey.startsWith('sk-or-')) return 'openrouter';
   if (apiKey.startsWith('sk-ant-')) return 'anthropic';
+  if (apiKey.startsWith('cfat_')) return 'cloudflare';
   return null;
 }
 
@@ -118,7 +119,46 @@ const openrouter = {
   },
 };
 
-const PROVIDERS = { anthropic, openrouter };
+/* ------------------------------------------------------------------ */
+/* Cloudflare Workers AI (OpenAI-compatible chat completions)          */
+/* ------------------------------------------------------------------ */
+const cloudflare = {
+  id: 'cloudflare',
+  defaultBase: 'https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1',
+  defaultModel: '@cf/meta/llama-3.3-70b-instruct-fp8-fast',
+  path: '/chat/completions',
+  headers(key) {
+    return {
+      Authorization: `Bearer ${key}`,
+      'content-type': 'application/json',
+    };
+  },
+  body({ model, system, user, maxTokens }) {
+    return {
+      model,
+      max_tokens: maxTokens,
+      messages: [
+        { role: 'system', content: system },
+        { role: 'user', content: user },
+      ],
+      response_format: { type: 'json_object' },
+    };
+  },
+  parse(json) {
+    const choice = (json.choices ?? [])[0] ?? {};
+    return {
+      text: choice.message?.content ?? '',
+      stop_reason: choice.finish_reason,
+      usage: {
+        input_tokens: json.usage?.prompt_tokens ?? null,
+        output_tokens: json.usage?.completion_tokens ?? null,
+      },
+      raw: json,
+    };
+  },
+};
+
+const PROVIDERS = { anthropic, openrouter, cloudflare };
 
 export function getProvider(name) {
   const p = PROVIDERS[name];
@@ -151,7 +191,17 @@ export async function callModel({
   onRetry = () => {},
 }) {
   const p = getProvider(provider);
-  const url = (baseUrl ?? p.defaultBase) + p.path;
+  let resolvedBase = baseUrl ?? p.defaultBase;
+  if (p.id === 'cloudflare') {
+    const accountId = extraHeaders?.accountId ?? process.env.CLOUDFLARE_ACCOUNT_ID;
+    if (resolvedBase.includes('{account_id}')) {
+      if (!accountId) {
+        throw new Error('Cloudflare Workers AI requires CLOUDFLARE_ACCOUNT_ID in environment or options');
+      }
+      resolvedBase = resolvedBase.replace('{account_id}', accountId);
+    }
+  }
+  const url = resolvedBase + p.path;
   const headers = p.headers(apiKey, extraHeaders);
   const payload = p.body({ model: model ?? p.defaultModel, system, user, maxTokens });
 

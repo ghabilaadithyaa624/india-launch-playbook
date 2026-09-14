@@ -128,6 +128,10 @@ export async function runAgent({
   doc.generated_at = doc.generated_at ?? nowIso();
   doc.agent = { ...(doc.agent ?? {}), id: agentId, prompt_sha256: prompt.sha256 };
 
+  for (const s of doc.sources ?? []) {
+    if (s && s.retrieval_method === 'fetched') s.retrieval_method = 'web_fetch';
+  }
+
   const allowedSourceIds = new Set(sources.map((s) => s.id));
   const verdict = await validateAgentOutput(doc, { allowedSourceIds });
   if (!verdict.ok) {

@@ -242,8 +242,9 @@ The pipeline is provider-agnostic. The provider is inferred from your key:
 |---|---|---|---|---|
 | `sk-or-v1-` | OpenRouter | `/v1/chat/completions` | `Authorization: Bearer` | `messages[0]` |
 | `sk-ant-` | Anthropic | `/v1/messages` | `x-api-key` | top-level `system` |
+| `cfat_` | Cloudflare Workers AI | `/accounts/{account_id}/ai/v1/chat/completions` | `Authorization: Bearer` | `messages[0]` |
 
-These are not interchangeable. An OpenRouter key sent to `api.anthropic.com`
+These are not interchangeable. An OpenRouter or Cloudflare key sent to `api.anthropic.com`
 returns 401, and the request bodies differ in shape.
 
 ### Running the agents live

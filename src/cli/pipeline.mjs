@@ -26,8 +26,10 @@ function step(n, total, label) {
   console.log(`\n${c.cyan(`[${n}/${total}]`)} ${c.bold(label)}`);
 }
 
+try { process.loadEnvFile?.(); } catch {}
 async function main() {
   const args = parseArgs(process.argv.slice(2));
+  if (args['source-date-epoch']) process.env.SOURCE_DATE_EPOCH = String(args['source-date-epoch']);
   const TOTAL = 7;
 
   const inputPath = args.input

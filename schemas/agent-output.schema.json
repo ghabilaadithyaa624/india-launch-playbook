@@ -232,7 +232,7 @@
           "url": { "type": ["string", "null"] },
           "published_at": { "type": ["string", "null"], "format": "date" },
           "accessed_at": { "type": "string", "format": "date" },
-          "retrieval_method": { "enum": ["web_fetch", "operator_supplied", "none"] }
+          "retrieval_method": { "enum": ["web_fetch", "operator_supplied", "none", "fetched"] }
         }
       }
     },

@@ -23,14 +23,21 @@ import { buildSourcePack } from '../lib/sourcepack.mjs';
 import { detectProvider } from '../lib/provider.mjs';
 import { runAgent } from '../lib/agents.mjs';
 
+try { process.loadEnvFile?.(); } catch {}
 const args = parseArgs(process.argv.slice(2));
 
-const apiKey = process.env.LLM_API_KEY || process.env.OPENROUTER_API_KEY || process.env.ANTHROPIC_API_KEY;
+const apiKey =
+  process.env.LLM_API_KEY ||
+  process.env.OPENROUTER_API_KEY ||
+  process.env.ANTHROPIC_API_KEY ||
+  process.env.CLOUDFLARE_API_TOKEN ||
+  process.env.CLOUDFLARE_API_KEY;
 if (!apiKey) {
   console.error(c.red('No API key. Set one of:'));
-  console.error('  export LLM_API_KEY=...        (any supported provider)');
-  console.error('  export OPENROUTER_API_KEY=... (sk-or-v1-...)');
-  console.error('  export ANTHROPIC_API_KEY=...  (sk-ant-...)');
+  console.error('  export LLM_API_KEY=...           (any supported provider)');
+  console.error('  export OPENROUTER_API_KEY=...    (sk-or-v1-...)');
+  console.error('  export ANTHROPIC_API_KEY=...     (sk-ant-...)');
+  console.error('  export CLOUDFLARE_API_TOKEN=...  (cfat_...)');
   console.error('\nNever pass a key as a command-line flag: it leaks into shell history.');
   process.exit(1);
 }
@@ -38,7 +45,12 @@ if (!apiKey) {
 const provider = args.provider ?? detectProvider(apiKey);
 if (!provider) {
   console.error(c.red('Could not infer provider from the key shape.'));
-  console.error('Pass --provider openrouter|anthropic explicitly.');
+  console.error('Pass --provider openrouter|anthropic|cloudflare explicitly.');
+  process.exit(1);
+}
+
+if (provider === 'cloudflare' && !process.env.CLOUDFLARE_ACCOUNT_ID && !args['base-url'] && !process.env.LLM_BASE_URL) {
+  console.error(c.red('Cloudflare provider requires CLOUDFLARE_ACCOUNT_ID in environment or options.'));
   process.exit(1);
 }
 
