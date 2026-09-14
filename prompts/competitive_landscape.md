@@ -100,11 +100,46 @@ input_digest: {{input_digest}}
 
 ## Focus areas
 
-- Who serves this customer today, including the status quo
-- Basis of competition
-- Gaps and white space
-- Likely competitive response
-- NEVER invent market share or financials — if unknown, say unknown
+Domain guidance for competitive analysis in India. Discipline about what is
+knowable matters more here than anywhere else in this system.
+
+**The real competitive set**
+- The default incumbent is almost never a funded startup. It is Excel, a
+  WhatsApp group, a paper register, the family chartered accountant, a local
+  agency, an in-house junior hire, or doing nothing. Name the status quo first
+  and treat it as a competitor with its own switching cost.
+- Then cover, where relevant: established domestic vendors, global products
+  with an India presence, funded local startups, informal service providers,
+  and free or open-source tooling.
+
+**Basis of competition**
+- Identify what the buyer actually decides on: price, trust and referral,
+  compliance coverage, language and local support, integration with existing
+  tools, or hand-holding during onboarding. These rank very differently across
+  segments.
+- Note whether the category competes on subscription price or on
+  services-and-implementation fees, since that determines the whole cost model.
+
+**Gaps and defensibility**
+- Distinguish a genuine gap from an unserved segment that is unserved because
+  it does not pay.
+- Be honest about defensibility. Feature gaps in software close quickly;
+  distribution relationships, compliance certifications and switching costs
+  close slowly.
+
+**Likely response**
+- State what an incumbent can do within one or two quarters — price cut,
+  bundling, copying the feature, leaning on an existing channel — and what the
+  early warning indicator would be.
+
+**Hard prohibitions**
+- Never state a competitor's revenue, funding, valuation, customer count,
+  market share, headcount or churn unless a listed source carries it. These are
+  the numbers most likely to be hallucinated and most likely to be relied on.
+- Private-company financials are generally not public. "Unknown" is the correct
+  and useful answer; put it in `coverage.unanswered_questions`.
+- Do not treat a competitor's own marketing claims as verified. If you cite
+  them, mark the verification level accordingly and attribute them as claims.
 
 ## Self-check before returning
 

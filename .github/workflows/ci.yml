@@ -81,6 +81,9 @@ jobs:
           rm -rf runs/_ci1 runs/_ci2
           exit $fail
 
+      - name: n8n workflow prompts must match prompts/*.md
+        run: npm run sync:workflow -- --check
+
       - name: n8n workflow structural check
         run: |
           node -e '

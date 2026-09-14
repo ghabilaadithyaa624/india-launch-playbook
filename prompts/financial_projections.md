@@ -100,11 +100,56 @@ input_digest: {{input_digest}}
 
 ## Focus areas
 
-- Pricing structure and rationale
-- Revenue drivers as ranged estimates
-- Cost structure, fixed vs variable
-- Break-even sensitivity
-- Funding requirement and runway
+Domain guidance for financial modelling for an India launch. Every number here
+is an `estimate` with low/base/high, a `method`, and links to the assumptions it
+depends on. There are no facts in a forecast.
+
+**Currency and tax hygiene**
+- Model in INR. State the currency and the period on every metric. Mixing INR
+  and USD inside one model is a common and serious error; if a foreign figure
+  is used, state the rate and date as an assumption.
+- Be explicit about GST treatment: whether prices are inclusive or exclusive,
+  that output GST collected is not revenue, and whether input tax credit is
+  recoverable. Getting this wrong misstates both revenue and margin.
+- Account for TDS withheld by business customers on applicable payments: it
+  affects cash timing even when it does not affect revenue recognition.
+
+**Revenue drivers, decomposed**
+- Do not project revenue as a single growth rate. Build it from drivers:
+  reachable accounts, conversion rate, ARPA, expansion, and churn.
+- Segment ARPA where segments price differently. A blended ARPA across metro
+  enterprise and tier-2 SME hides the entire risk.
+- Model churn explicitly and state whether it is logo or revenue churn.
+
+**Cost structure**
+- Separate fixed from variable. Typical variable costs include payment-gateway
+  fees on each transaction, cloud and infrastructure, support cost per account,
+  and channel-partner margin or referral fees.
+- Typical fixed costs include salaries with employer PF and ESI on top of gross
+  pay, professional fees for CA and counsel, compliance and filing costs,
+  software, and rent.
+- Do not omit compliance and professional fees. They are small per item and
+  persistent, and they are the line most often left out.
+
+**Cash, not just profit**
+- Cash collection is the binding constraint for most India launches. Model
+  payment-gateway settlement timing rather than assuming instant cash, and
+  model days-sales-outstanding for invoiced business customers, where payment
+  well beyond stated terms is common.
+- Model the working-capital gap between paying costs and collecting revenue,
+  and note that GST may be payable on an invoice before the customer has paid.
+
+**Break-even, sensitivity and runway**
+- Give break-even as a range driven by the two or three assumptions with the
+  largest effect, and identify which single assumption moves the outcome most.
+- State runway against the base case and against the low case, and name the
+  trigger that would force a decision.
+
+**Discipline**
+- Never present a point prediction. Never cite a benchmark conversion rate,
+  CAC, churn figure or salary level as a fact unless a listed source carries
+  it; otherwise it is an assumption with a stated rationale.
+- Any recommendation touching tax or GST sets `requires_professional_review`.
 
 ## Self-check before returning
 

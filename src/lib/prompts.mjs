@@ -22,22 +22,61 @@ function sectionFence(md, heading) {
   return md.slice(start, close).trim();
 }
 
+/**
+ * Pull the prose body of a "## Heading" up to the next "## " heading.
+ *
+ * Focus areas and the self-check live outside fenced blocks because they are
+ * meant to be readable and reviewable as markdown. They are still prompt text:
+ * they are appended to the system prompt below. Before this existed the loader
+ * read only the fenced blocks, so every word under these headings was dead
+ * text that never reached the model — which left all eight "specialists"
+ * sharing 64 of 66 identical system-prompt lines.
+ */
+function sectionBody(md, heading) {
+  const h = md.indexOf(`## ${heading}`);
+  if (h === -1) return null;
+  const start = md.indexOf('\n', h) + 1;
+  const nextIdx = md.indexOf('\n## ', start);
+  const body = (nextIdx === -1 ? md.slice(start) : md.slice(start, nextIdx)).trim();
+  return body || null;
+}
+
 export async function loadPrompt(agentId) {
   const file = path.join(REPO_ROOT, 'prompts', `${agentId}.md`);
   const md = await readFile(file, 'utf8');
 
-  const system = sectionFence(md, 'System prompt');
+  const contract = sectionFence(md, 'System prompt');
   const userTemplate = sectionFence(md, 'User prompt template');
-  if (!system) throw new Error(`prompts/${agentId}.md: missing "## System prompt" fenced block`);
+  if (!contract) throw new Error(`prompts/${agentId}.md: missing "## System prompt" fenced block`);
   if (!userTemplate) {
     throw new Error(`prompts/${agentId}.md: missing "## User prompt template" fenced block`);
   }
 
+  const focus = sectionBody(md, 'Focus areas');
+  const selfCheck = sectionBody(md, 'Self-check before returning');
+  if (!focus) throw new Error(`prompts/${agentId}.md: missing "## Focus areas" section`);
+  if (!selfCheck) {
+    throw new Error(`prompts/${agentId}.md: missing "## Self-check before returning" section`);
+  }
+
+  const system = [
+    contract,
+    '',
+    'FOCUS AREAS (domain guidance for this agent)',
+    focus,
+    '',
+    'SELF-CHECK BEFORE RETURNING',
+    selfCheck,
+  ].join('\n');
+
   return {
     agentId,
+    contract,
+    focus,
+    selfCheck,
     system,
     userTemplate,
-    // Hash the whole file: focus areas and self-check influence behaviour too.
+    // Hash the whole file: focus areas and self-check are part of the prompt.
     sha256: sha256(md),
   };
 }

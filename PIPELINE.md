@@ -94,6 +94,51 @@ Line counts are gone. Completeness is `coverage.required_sections_present`; hone
 
 ---
 
+## 4b · Anatomy of a prompt
+
+Each `prompts/<agent_id>.md` has four sections, and **all four are sent to the model**:
+
+| Section | Fenced? | Role |
+|---|---|---|
+| `## System prompt` | yes | The shared evidence contract and the exact output shape. Near-identical across agents by design. |
+| `## User prompt template` | yes | `{{business_idea}}`, `{{sector}}`, `{{run_id}}`, `{{source_block}}` … |
+| `## Focus areas` | no | The **specialist half** — India-specific domain guidance unique to the agent. |
+| `## Self-check before returning` | no | Pre-return checklist. |
+
+The loader concatenates the contract, the focus areas and the self-check into one
+system prompt. This matters because it was not always true: the loader originally
+read only the two *fenced* blocks, so everything under the last two headings was
+dead text that never reached the model. With that guidance dropped, **64 of 66
+system-prompt lines were identical across all eight agents** — the only
+differentiator was the job title. Eight "specialists" were one prompt run eight
+times, which quietly removes the reason to run eight of them.
+
+`test/prompts.test.mjs` now fails if any agent drops below 10 unique prompt
+lines, so the boilerplate collapse cannot recur silently.
+
+**Focus areas state no figures.** A number written into a prompt comes back out
+of the model as a sourced-looking fact. The guidance names regulators (RBI,
+SEBI, IRDAI, FSSAI, CDSCO, DGFT, TRAI, CERT-In, MeitY) and asks questions; the
+evidence rules push anything unverified into `assumptions[]` or `estimates[]`.
+A test enforces this.
+
+### The workflow is a derived artifact
+
+`N8N_COMPLETE_WORKFLOW.json` carries an inline copy of each system prompt,
+because an HTTP Request node cannot read a file from the repository. That copy
+had already drifted — the embedded prompts were missing the OUTPUT SHAPE block,
+so an n8n run and a CLI run issued different instructions under the same
+recorded `prompt_sha256`.
+
+Edit `prompts/*.md`, never the JSON, then:
+
+```bash
+npm run sync:workflow           # regenerate the embedded prompts
+npm run sync:workflow -- --check   # CI mode: fail if stale
+```
+
+---
+
 ## 5 · Connecting n8n
 
 ### Credentials
@@ -247,6 +292,7 @@ only the TLS hop is substituted. These tests need no API key and run in CI.
 | Layer | State |
 |---|---|
 | Output contract + trust rules | ✅ Implemented, 22 tests |
+| Per-agent prompt specialisation | ✅ Focus areas now reach the model; India-specific guidance per agent |
 | Evidence layer (whitelist, offline + opt-in fetch) | ✅ Implemented |
 | Input validation | ✅ Implemented |
 | Synthesis + contradiction detection | ✅ Implemented |
