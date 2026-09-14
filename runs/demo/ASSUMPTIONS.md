@@ -1,6 +1,6 @@
 # Assumption register
 
-**Run:** `f4f55222-7b89-45c0-bee1-20830875d076` · **Generated:** 2026-09-14T09:10:27.949Z
+**Run:** `5d1f0f4e-6a2b-4c3d-8e9f-0a1b2c3d4e5f` · **Generated:** 2025-09-14T08:00:00.000Z
 
 Every belief this playbook rests on, deduplicated across agents and ranked
 by what breaks if it is wrong. Validate the CRITICAL rows first.

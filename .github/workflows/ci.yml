@@ -11,18 +11,36 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # Must match the "engines" range in package.json. Node 20 cannot
+        # expand glob patterns passed to --test; 22 can. Testing both stops
+        # a runner-only failure from reaching main.
+        node: ['20', '22']
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: ${{ matrix.node }}
 
       - name: Install
         run: npm ci || npm install
 
       - name: Unit + contract tests
         run: npm test
+
+      - name: Guard — the suite must actually run tests
+        run: |
+          # A glob that matches nothing can exit 0 and report "0 tests".
+          # Fail loudly instead of pretending the suite passed.
+          COUNT=$(npm test 2>&1 | grep -E '^# pass ' | awk '{print $3}')
+          echo "tests passed: ${COUNT:-0}"
+          if [ -z "$COUNT" ] || [ "$COUNT" -lt 20 ]; then
+            echo "::error::Expected at least 20 passing tests, got ${COUNT:-0}"
+            exit 1
+          fi
 
       - name: Validate fixture agent outputs
         run: npm run validate:agent -- test/fixtures/agents
@@ -32,6 +50,17 @@ jobs:
 
       - name: End-to-end pipeline (offline, dry-run publish)
         run: npm run demo
+
+      - name: Committed demo run must match what the code produces
+        run: |
+          # README and PIPELINE.md link to runs/demo as the reference output.
+          # If the pipeline changes, the committed demo must be regenerated.
+          if ! git diff --quiet -- runs/demo; then
+            echo "::error::runs/demo is stale. Run 'npm run demo' and commit the result."
+            git diff --stat -- runs/demo
+            exit 1
+          fi
+          echo "runs/demo matches generated output"
 
       - name: Reproducibility — identical input must yield identical bytes
         env:

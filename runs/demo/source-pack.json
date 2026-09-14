@@ -1,6 +1,6 @@
 {
   "pack_version": "1.0.0",
-  "built_at": "2026-09-14T09:10:27.911Z",
+  "built_at": "2025-09-14T08:00:00.000Z",
   "mode": "offline",
   "allowed_domains": [
     "meity.gov.in",
@@ -96,7 +96,7 @@
       "title": "Digital Personal Data Protection Act, 2023 and Rules",
       "url": "https://www.meity.gov.in/",
       "published_at": null,
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2025-09-14",
       "retrieval_method": "none",
       "topics": [
         "privacy",
@@ -115,7 +115,7 @@
       "title": "Commercial communications / DLT registration guidance",
       "url": "https://trai.gov.in/",
       "published_at": null,
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2025-09-14",
       "retrieval_method": "none",
       "topics": [
         "messaging",
@@ -135,7 +135,7 @@
       "title": "Payment and Settlement Systems — notifications and master directions",
       "url": "https://www.rbi.org.in/",
       "published_at": null,
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2025-09-14",
       "retrieval_method": "none",
       "topics": [
         "payments",
@@ -155,7 +155,7 @@
       "title": "Directions and advisories on cyber incident reporting",
       "url": "https://www.cert-in.org.in/",
       "published_at": null,
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2025-09-14",
       "retrieval_method": "none",
       "topics": [
         "security",
@@ -174,7 +174,7 @@
       "title": "Company incorporation and post-incorporation compliance",
       "url": "https://www.mca.gov.in/",
       "published_at": null,
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2025-09-14",
       "retrieval_method": "none",
       "topics": [
         "entity",
@@ -192,7 +192,7 @@
       "title": "GST registration, returns and rates",
       "url": "https://www.gst.gov.in/",
       "published_at": null,
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2025-09-14",
       "retrieval_method": "none",
       "topics": [
         "tax",
@@ -211,7 +211,7 @@
       "title": "Udyam registration for micro, small and medium enterprises",
       "url": "https://udyamregistration.gov.in/",
       "published_at": null,
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2025-09-14",
       "retrieval_method": "none",
       "topics": [
         "entity",
@@ -229,7 +229,7 @@
       "title": "Trademark search and filing",
       "url": "https://ipindia.gov.in/",
       "published_at": null,
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2025-09-14",
       "retrieval_method": "none",
       "topics": [
         "brand",
@@ -248,7 +248,7 @@
       "title": "Food business licensing, labelling and claims",
       "url": "https://www.fssai.gov.in/",
       "published_at": null,
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2025-09-14",
       "retrieval_method": "none",
       "topics": [
         "food",
@@ -268,7 +268,7 @@
       "title": "Import/export policy and licensing",
       "url": "https://www.dgft.gov.in/",
       "published_at": null,
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2025-09-14",
       "retrieval_method": "none",
       "topics": [
         "import",
@@ -287,7 +287,7 @@
       "title": "National accounts, consumption and household survey statistics",
       "url": "https://www.mospi.gov.in/",
       "published_at": null,
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2025-09-14",
       "retrieval_method": "none",
       "topics": [
         "market_research",
@@ -307,7 +307,7 @@
       "title": "Census of India — population and urbanisation data",
       "url": "https://censusindia.gov.in/",
       "published_at": null,
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2025-09-14",
       "retrieval_method": "none",
       "topics": [
         "market_research",
@@ -326,7 +326,7 @@
       "title": "Economic Survey and Union Budget documents",
       "url": "https://www.indiabudget.gov.in/",
       "published_at": null,
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2025-09-14",
       "retrieval_method": "none",
       "topics": [
         "market_research",
@@ -345,7 +345,7 @@
       "title": "Labour codes, wages and employment regulation",
       "url": "https://labour.gov.in/",
       "published_at": null,
-      "accessed_at": "2026-09-14",
+      "accessed_at": "2025-09-14",
       "retrieval_method": "none",
       "topics": [
         "hr",

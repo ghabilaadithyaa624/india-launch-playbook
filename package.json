@@ -3,21 +3,16 @@
   "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "India Launch Playbook — human handbook + evidence-gated multi-agent document generator",
+  "description": "India Launch Playbook \u2014 human handbook + evidence-gated multi-agent document generator",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
-    "sourcepack": "node src/cli/build-sourcepack.mjs",
-    "validate:agent": "node src/cli/validate-agent.mjs",
-    "synthesize": "node src/cli/synthesize.mjs",
-    "render": "node src/cli/render.mjs",
-    "publish": "node src/cli/publish.mjs",
-    "pipeline": "node src/cli/pipeline.mjs",
-    "demo": "node src/cli/pipeline.mjs --run-dir runs/demo --agents test/fixtures/agents --force",
+    "demo": "SOURCE_DATE_EPOCH=1757836800 node src/cli/pipeline.mjs --run-dir runs/demo --agents test/fixtures/agents --run-id 5d1f0f4e-6a2b-4c3d-8e9f-0a1b2c3d4e5f --force",
     "lint:docs": "node src/cli/lint-docs.mjs",
-    "guard:paths": "node src/cli/guard-paths.mjs",
-    "test": "node --test test/**/*.test.mjs"
+    "pipeline": "node src/cli/pipeline.mjs",
+    "test": "node --test $(find test -name '*.test.mjs' | sort)",
+    "validate:agent": "node src/cli/validate-agent.mjs"
   },
   "dependencies": {
     "ajv": "^8.17.1",

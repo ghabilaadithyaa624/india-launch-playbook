@@ -8,7 +8,7 @@
 
 | | |
 |---|---|
-| **Run** | `f4f55222-7b89-45c0-bee1-20830875d076` |
+| **Run** | `5d1f0f4e-6a2b-4c3d-8e9f-0a1b2c3d4e5f` |
 | **Generated** | 2026-09-14T06:02:00.000Z |
 | **Model** | `claude-opus-5` |
 | **Prompt version** | `1.0.0` (sha256 `bbbbbbbbbbbb…`) |
@@ -76,4 +76,4 @@ Ranges, not point predictions. `base` is the working number; `low`/`high` bound 
 - **S006** Goods and Services Tax Network — GST registration, returns and rates <https://www.gst.gov.in/> _(primary_regulator, accessed 2026-09-14)_
 
 ---
-_Run `f4f55222-7b89-45c0-bee1-20830875d076` · generated 2026-09-14T09:10:27.949Z · schema 1.0.0_
+_Run `5d1f0f4e-6a2b-4c3d-8e9f-0a1b2c3d4e5f` · generated 2025-09-14T08:00:00.000Z · schema 1.0.0_

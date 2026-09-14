@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "run_id": "f4f55222-7b89-45c0-bee1-20830875d076",
-  "generated_at": "2026-09-14T09:10:27.949Z",
+  "run_id": "5d1f0f4e-6a2b-4c3d-8e9f-0a1b2c3d4e5f",
+  "generated_at": "2025-09-14T08:00:00.000Z",
   "input_digest": "c242515ea4075853fbdfa43a262f1104347569829a2d27265e2368bd951d3f1c",
   "source_pack_mode": "offline",
   "confidence": {
@@ -92,32 +92,32 @@
     {
       "path": "01-market-research.md",
       "bytes": 4743,
-      "sha256": "571d6c4a3a0433586445c7f9912968cf53d2b20a63400865a5e30aa30b29ebea"
+      "sha256": "940a5f91221ffe3ab9c53e8a62501e2a6dd05ed0f9384c8e1d977dcad92ec89f"
     },
     {
       "path": "02-regulatory-compliance.md",
       "bytes": 5053,
-      "sha256": "dad468148de8bc1e01f3a61ac57eb656697235b5028f25e4989bdd0f7328cc0b"
+      "sha256": "57520813115a04207a937e626d1e5bd7acc649ba1d8f5d5af5aee7bc6492c7ba"
     },
     {
       "path": "06-financial-projections.md",
       "bytes": 4283,
-      "sha256": "861d88cd917c79a1039c7504186c3caa087b0dd097508c20893bb19b2d5a34e5"
+      "sha256": "9ff1fc5b22b6922fc8cbefd6e2e198e89c530246b5cee7f2b7b8a1ce8d51424d"
     },
     {
       "path": "MASTER-PLAYBOOK.md",
       "bytes": 6314,
-      "sha256": "acf4f8054638de6ddcee78bb2aca3225cf2394def6625ff57de807d2098d8453"
+      "sha256": "4d50926369c9d0bc1e705da98d3c625828971c3143759a01ced2baa5e796ae5a"
     },
     {
       "path": "ASSUMPTIONS.md",
       "bytes": 3170,
-      "sha256": "db70e0ac01978b5effbc0da316f585dfb5e49793e1ba618fcb56bbd974fd4ba2"
+      "sha256": "44eef670b87bbc45bc45a70d5a9ecc58ac055957f4ecff461d000ebafc906aae"
     },
     {
       "path": "SOURCES.md",
       "bytes": 1492,
-      "sha256": "6ca56c4a0e312bf46f916e529a36b4dcf7b836831c0c378e55ce2c0f8bb3301b"
+      "sha256": "339c1089f6fccc48594497f37f4c3c0bec6dabdc81ff255493264409dbd8e798"
     }
   ]
 }
