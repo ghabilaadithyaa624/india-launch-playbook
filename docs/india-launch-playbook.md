@@ -1,188 +1,151 @@
-# **India Launch Playbook – Plant‑Based Protein Food Brand**  
-*Prepared for: Executive Team*  
-*Date: 14 Sept 2026*  
+## India Launch Playbook – Plant‑Based Protein Food Brand  
+**FY 2025‑26** – Integrated Operational, Financial & Risk Plan  
 
----
-## 1. Executive Summary  
+---  
 
-| **Objective** | Capture 1 % of the Indian ready‑to‑eat (RTE) protein market (≈ ₹1.2 bn) within 24 months, delivering a net‑margin > 12 % on the plant‑based portfolio. |
-|---------------|-----------------------------------------------------------------------------------|
-| **Target**    | Urban‑centric health‑conscious consumers (18‑45 y) plus “flex‑itarian” families in Tier‑1 & high‑growth Tier‑2 cities. |
-| **Entry Model** | **Hybrid** – Direct‑to‑Consumer (D2C) e‑commerce + strategic partnership with leading omnichannel grocery aggregators (Udaan, JioMart) and pilot QSR/fitness‑app tie‑ins. |
-| **Key Differentiators** | • Indian‑flavoured, chef‑endorsed recipes (e.g., “Masala Pea Crumble”).  <br>• Clean‑label, non‑GMO, gluten‑free, verified by FSSAI & FoodSafe certifications. <br>• Agile “micro‑hub” distribution enabling fast replenishment in kirana stores. |
-| **Critical Success Factors** | 1️⃣ Regulatory clearance (FSSAI & claims). 2️⃣ Supply‑chain resilience for pea‑protein & spices. 3️⃣ Scalable digital acquisition (CAC < ₹120). 4️⃣ Strong influencer & chef partnership activation. |
-| **Financial Highlights (Year‑1)** | • Revenue: ₹850 mn (₹500 mn D2C, ₹350 mn marketplace).  <br>• Gross margin: 38 % (post‑launch ramp).  <br>• EBITDA: 6 % (pre‑scale).  <br>• Cash‑burn: ₹120 mn → break‑even month 18. |
-| **Go‑to‑Market (GTM) Timeline** | Pre‑launch (Month –3 → 0), Launch (Month 0 → 3), Expansion (Month 4 → 12), Scale‑up (Month 13 → 24). |
+### 1. Executive Summary  
 
----
+| Item | Detail |
+|------|--------|
+| **Goal** | Capture **≥1 % of the Indian plant‑based protein market** (≈ ₹2 bn sales) by FY 2027, reaching **₹250 mn ARR** in FY 2026. |
+| **Primary Value Proposition** | *Indian‑flavoured, high‑protein (≥20 g/serving) plant‑based meals & snacks* with **Carbon‑Trust neutral** footprint and **FSSAI high‑protein claim**. |
+| **Entry Model** | **Hybrid** – Direct‑to‑Consumer (DTC) digital hub + major **Marketplace** (Amazon, Flipkart) + **Modern Trade** (Nature’s Basket, Foodhall, Reliance Fresh) + selective **Kirana** rollout. |
+| **Launch Geography** | **Phase 1 (Pilot)** – Delhi‑NCR, Mumbai, Bengaluru, Hyderabad, Chennai (Tier‑1). <br>**Phase 2 (Scale)** – Tier‑2 metros (Pune, Kolkata, Ahmedabad, Surat, Indore) and high‑potential Tier‑3 (Coimbatore, Lucknow). |
+| **Time‑to‑Market** | **12 months** total: <br>‑ Phase 0 (Regulatory & Supply‑Chain set‑up) – Month 0‑2 <br>‑ Phase 1 (Pilot) – Month 3‑8 <br>‑ Phase 2 (Scale) – Month 9‑12 |
+| **Key Success Metrics (FY 26)** | • **Revenue:** ₹250 mn <br>• **CAC:** ≤ ₹550 per new customer (DTC) <br>• **LTV:** ≥ ₹2 500 (12‑month) <br>• **Repeat‑purchase rate:** ≥ 40 % <br>• **Gross margin:** ≥ 45 % (post‑launch) |
+| **Investment Required** | **CAPEX:** ₹45 mn (contract‑manufacturing tooling, QA labs, warehouse) <br>**OPEX FY 26:** ₹120 mn (marketing, logistics, staff) |
+| **Decision Point** | **Go/No‑Go** after Phase 0 validation (regulatory approval, supplier contracts, MVP SKU testing). |  
 
-## 2. Market Opportunity  
+---  
 
-| **Parameter** | **Insight (Source)** |
-|---------------|----------------------|
-| **Protein‑food market size** | ₹120 bn RTE protein (2025 forecast) – CAGR 12 % (Nielsen, 2024). |
-| **Plant‑based share** | 8 % of protein category, projected to reach 15 % by 2030 (Euromonitor, 2024). |
-| **Growth drivers** | • Rising flex‑itarianism (30 % of urban adults). <br>• Health‑conscious millennials (≥ 45 % consume plant‑protein weekly). <br>• Government “Make in India” incentives for agri‑tech & food‑processing. |
-| **Competitive landscape** | • “GoodMornings” (global entrant) – premium, limited distribution. <br>• Local FMCG (Amul, Parle) – emerging plant‑based lines, strong trade network. <br>• Unbranded pea‑protein powders – price pressure in tier‑2. |
-| **Channel mix** | D2C (35 % of sales), Marketplace (30 %), Modern Trade (20 %), Kirana via micro‑hubs (15 %). |
-| **Price elasticity** | Sensitivity high in Tier‑2/3; willingness to pay ₹150‑₹200 per 200 g pack for “premium‑flavoured” SKUs (primary research, Mar‑2026). |
+### 2. Market Opportunity  
 
-*Assumption*: Market size and growth rates are based on third‑party syndicated data; primary research validates willingness to pay for flavored, chef‑endorsed SKUs.
+| Dimension | Insight (source: Euromonitor, Nielsen, prior agents) |
+|-----------|------------------------------------------------------|
+| **Total Addressable Market (TAM)** | Indian plant‑based protein market ≈ **₹20 bn** in FY 2025; growing **≈ 20 % CAGR** (driven by health, flexitarian shift, sustainability). |
+| **Serviceable Available Market (SAM)** | Urban, 18‑45 yr health‑conscious segment (~150 mn people) → **₹5 bn**. |
+| **Serviceable Obtainable Market (SOM)** | Targeting 2 % of SAM by FY 27 → **₹100 mn** (conservative); FY 26 goal set at **₹250 mn** by leveraging premium‑value mix and DTC growth. |
+| **Consumer Drivers** | • Protein intake (20‑30 g per meal) <br>• Indian flavour palate (masala, tikka, curry) <br>• Sustainability awareness (carbon‑neutral claims) <br>• Convenience (ready‑to‑eat & shelf‑stable). |
+| **Channel Mix (2025)** | **Marketplace 45 %**, **Modern Trade 30 %**, **DTC 20 %**, **Kirana 5 %** (expected after Phase 2). |
+| **Competitive Landscape** | • 5 core Indian brands (GoodMoo, Casa M) – price‑sensitive. <br>• 3 global entrants (Beyond Meat, Impossible) – premium/niche. <br>• Emerging private‑label SKUs in Modern Trade. |
 
----
+---  
 
-## 3. Regulatory & Food‑Safety Requirements  
+### 3. Regulatory Requirements  
 
-| **Requirement** | **Action** | **Owner** | **Assumption / Note** |
-|-----------------|------------|-----------|-----------------------|
-| FSSAI product registration (Food Category: “Plant‑based protein”) | Submit dossier 8 weeks pre‑launch; include lab‑tested nutrient profile, allergen statement, claim substantiation. | Regulatory Affairs Manager | Expect clearance within 12 weeks (historical avg). |
-| Claim approvals (high‑protein, soy‑free, vegan) | Pre‑clear with FSSAI & FoodSafe lab; secure “Clean‑Label” certification. | Regulatory Affairs Manager | Claims must be evidence‑based; use third‑party lab. |
-| Labelling (Bilingual, nutrition panel, “Made in India”) | Design compliant packaging; run a 2‑round legal review. | Marketing Ops Lead | No “GMO” claim – ensure raw material sourcing is non‑GMO. |
-| Food Safety (HACCP, GMP) at contract manufacturer | Audits + SOP sign‑off before first batch release. | Quality Assurance Lead | Third‑party audit scheduled month –2. |
-| Data‑privacy (IT Act, GDPR for EU customers) | Implement PCI‑DSS, GDPR‑ready consent on D2C site. | IT Security Head | Baseline compliance set before beta launch. |
+| Requirement | Status | Action (Owner) | Timeline |
+|-------------|--------|----------------|----------|
+| **FSSAI “high‑protein” claim** (≥ 20 g/100 g) | *Pending* – dossier prepared. | Engage regulatory consultant; submit by **Month 1**. | Month 1‑2 |
+| **Carbon‑Trust certification** (Carbon‑neutral) | *In progress* – baseline audit done. | Complete verification, obtain seal by **Month 2**. | Month 1‑2 |
+| **Labeling (NP‑CFT‑001)** – nutrition, allergen, FSSAI logo, bar‑code. | Draft ready. | Legal review; final print‑ready files by **Month 2**. | Month 2 |
+| **Advertising & Health Claims** – no unsubstantiated “super‑food” claims. | Compliant. | Ongoing monitoring; quarterly legal audit. | Ongoing |
+| **Import / Customs (if any imported ingredients)** – customs duty classification, GST. | Identified. | Finance & Procurement to set up HS‑code mapping. | Month 2‑3 |
 
-*Risk*: Regulatory delay (Medium likelihood, High impact) – mitigated by early engagement and parallel claim registration (see Section 9).
+*Assumption (A):* All approvals will be granted within the 2‑month window; contingency built into Phase 0 budget.  
 
----
+---  
 
-## 4. Recommended Entry Model  
+### 4. Recommended Entry Model  
 
-| **Model** | **Rationale** | **Key Partners** | **Implementation Horizon** |
-|-----------|----------------|-------------------|-----------------------------|
-| **Hybrid D2C + Marketplace** | Captures early‑adopter data, controls margin, builds customer database. | • Shopify/VTEX D2C platform  <br>• Amazon.in, Flipkart, JioMart (marketplace) | Launch D2C & marketplace simultaneously (Month 0). |
-| **Omni‑Channel Kirana via Micro‑Hubs** | Enables rapid “last‑mile” on‑shelf presence in Tier‑2/3 without heavy trade spend. | • Udaan, Ninjacart logistics <br>• 3‑5 regional micro‑warehouse partners | Phase‑1 (Month 3‑6) pilot in 3 Tier‑2 metros. |
-| **Strategic QSR / Fitness‑App Pilots** | Generates “experience” usage, cross‑sell to health‑conscious segment. | • Leading Indian QSR chain (e.g., Faasos) <br>• Fitness apps (Cure.fit) | Pilot Month 4‑8; expand if > 15 % conversion to repeat purchase. |
-| **Co‑manufacturing with a Local Plant‑Protein Facility** | Reduces import reliance, meets “Make‑in‑India” narrative. | • Indian plant‑protein processor (e.g., Reliance‑FoodTech) | Secure contract by Month –3; production start Month 2. |
+| Channel | Rationale | Target KPI (FY 26) |
+|---------|-----------|--------------------|
+| **Direct‑to‑Consumer (DTC) – branded app/website** | Highest margin, data capture, loyalty loop. | **20 % of revenue**, CAC ≤ ₹550, 30 % repeat purchase. |
+| **Marketplace (Amazon, Flipkart, BigBasket)** | Immediate shelf‑presence, national reach. | **45 % of revenue**, price‑parity compliance, 5‑star rating. |
+| **Modern Trade (Nature’s Basket, Foodhall, Reliance Fresh, Big Bazaar)** | Premium‑experience, impulse buys, shelf‑visibility. | **30 % of revenue**, POS penetration ≥ 70 % of target stores. |
+| **Kirana (via Cash‑&‑Carry/Wholesaler)** | Capture “everyday” purchase frequency in Tier‑2/3. | **5 % of revenue** by FY 27, SKU‑mix limited to value‑pack. |
+| **Food‑service (cafés, gyms, corporates)** – optional pilot in Phase 2. | Build brand–usage occasions. | **≤ 5 % of revenue** (test). |
 
-*Assumption*: Contract manufacturer has capacity ≥ 15 k units/month; micro‑hub partners can deliver 48‑hour SLA to kirana stores.
+*Recommendation (R):* Launch with **DTC + Marketplace** simultaneously (Month 3) while **Modern Trade** onboarding runs parallel (Month 5). Kirana added in Phase 2 after SKU rationalisation.  
 
----
+---  
 
-## 5. Target Customers & Segmentation  
+### 5. Target Customers  
 
-| **Segment** | **Demographics** | **Psychographics** | **Purchase Drivers** | **Preferred Channels** |
-|------------|------------------|--------------------|----------------------|------------------------|
-| **Urban Flex‑itarian** | 18‑35 y, metros, disposable income > ₹40 k/mo | Health‑focused, experiment with cuisines, sustainability‑aware | High protein, clean‑label, bold Indian flavors | D2C website, Instagram, Amazon |
-| **Family Health‑Seeker** | 30‑45 y, Tier‑1/Tier‑2, married, 2‑3 kids | Parent‑concerned about nutrition, value‑seeking | Affordable pack size, easy cooking, trusted chef endorsement | Kirana, Online grocery, QSR |
-| **Fitness & Wellness Enthusiast** | 20‑40 y, gym/fitness‑app users | Performance‑oriented, macro‑tracking | High protein density, low carbs, transparent nutrition | Fitness‑app tie‑ins, D2C, specialty stores |
-| **Millennial “Snack‑Explorer”** | 21‑30 y, college students, metros | Social media‑driven, trend‑chasing | Novel flavors, influencer validation, convenience | Instagram reels, TikTok, D2C flash sales |
+| Segment | Demographics | Psychographics | Primary Pain Points |
+|---------|--------------|----------------|----------------------|
+| **Urban Flexitarians** | 25‑40 yr, metro professionals, middle‑high income (₹8‑25 k/month). | Health & fitness‑oriented, environmentally aware, experiment with new foods. | Need convenient high‑protein options that taste Indian. |
+| **Young Families** | 30‑45 yr, dual‑income, children 5‑12 yr. | Value for money, safe nutrition for kids, quick meals. | Limited time for cooking; want trusted protein source. |
+| **Fitness Enthusiasts / Athletes** | 18‑35 yr, gym‑goers, sport‑players. | Macro‑nutrient tracking, performance‑driven. | Reliable protein content, clean label, low‑sugar. |
+| **Eco‑Conscious Millennials** | 22‑35 yr, college‑educated, digital natives. | Sustainability, brand story, social impact. | Transparent sourcing, carbon‑neutral claim. |
 
-*Assumption*: Each segment accounts for ~25 % of total addressable volume in Year‑1.
+*Assumption (A):* Distribution of these segments follows the Tier‑1 metros composition reported by Nielsen (≈ 55 % flexitarians, 30 % families, 15 % fitness).  
 
----
+---  
 
-## 6. Positioning & Brand Architecture  
+### 6. Positioning & Brand Narrative  
 
-| **Brand Pillar** | **Statement** | **Proof Points** |
-|------------------|---------------|------------------|
-| **Indian‑Flavoured Innovation** | “Taste of India, powered by plants.” | Chef‑curated masala blends, regional spice variations. |
-| **Clean‑Label Transparency** | “No soy, no GMO, no compromise.” | Certified non‑GMO pea protein, full nutrition panel, third‑party audit. |
-| **Convenient Nutrition** | “Ready in 5 min – protein‑packed.” | Pre‑cooked, microwave‑ready, single‑serve packs. |
-| **Community‑Driven** | “Join the flex‑itarian movement.” | Influencer community, user‑generated recipes, loyalty app. |
+- **Tagline:** “Power Your Indian Flavour – Plant‑Based, High‑Protein, Carbon‑Neutral.”  
+- **Core Pillars:**  
+  1. **Protein‑First:** ≥ 20 g per serving, validated by FSSAI.  
+  2. **Indian Taste DNA:** Masala‑grilled, Tikka‑spiced, Curry‑infused flavours.  
+  3. **Sustainability Story:** Carbon‑Trust neutral, 100 % plant‑based, no animal cruelty.  
+  4. **Convenient Health:** Shelf‑stable, ready‑to‑eat, no‑prep or 2‑min microwave.  
 
-*Recommendation*: Core brand name “PranaProtein” (working title) – placeholder pending trademark clearance.
+*Recommendation (R):* All visual assets, copy, and influencer scripts must anchor on the “Protein‑First + Indian Flavour” axis.  
 
----
+---  
 
-## 7. Competitive Strategy  
+### 7. Competitive Strategy  
 
-| **Dimension** | **Our Approach** | **Competitor Benchmark** |
-|---------------|------------------|--------------------------|
-| **Product** | Flavoured, chef‑endorsed, ready‑to‑cook packs (200 g) + low‑cost plain pea‑protein (500 g). | GoodMornings – premium plain powders; Amul – limited flavored range, high price. |
-| **Price** | Premium‑value: ₹150‑₹200 per 200 g pack; Plain 500 g at ₹300 (price floor). | FMCG incumbents price > ₹250 for comparable; unbranded powders < ₹120. |
-| **Distribution** | D2C + micro‑hub kirana + marketplace; rapid SKU rollout. | FMCG: nationwide trade; Global entrants limited to e‑commerce. |
-| **Promotion** | Chef‑driven recipe videos, micro‑influencers (10‑50 k followers), gamified loyalty app. | Competitors rely on mass media & trade promos. |
-| **Speed to Market** | 6‑month MVP → full range in 12 months (agile sprints). | Large FMCG → 12‑18 months for new SKU rollout. |
+| Dimension | Differentiation | Tactical Levers |
+|-----------|----------------|-----------------|
+| **Product** | Indian‑flavoured, high‑protein, shelf‑stable **vs.** bland global taste. | Proprietary spice blends; local R&D (Phase 0). |
+| **Price** | **Premium‑value** (₹150‑₹300) – 10‑15 % above base‑price peers but 20‑25 % below imported premium. | Tiered pack sizes (250 g, 500 g, 1 kg) to capture price‑sensitive buyers. |
+| **Channel** | Early DTC + Marketplace + Modern Trade **vs.** heavy reliance on a single channel. | Seamless omnichannel experience (single‑view loyalty). |
+| **Sustainability** | Certified carbon‑neutral claim – first in Indian market. | Highlight on packaging, digital storytelling. |
+| **Innovation Speed** | Rapid SKU iteration (3 new flavours/year). | Agile R&D sprints; pilot‑feedback loops. |
 
-*Key Differentiator*: Ability to test, iterate, and launch SKUs every 4‑6 weeks using D2C data loops.
+*Risk (Rsk):* Competitors may copy Indian flavour profile; protect via **trade secrets** and **continuous innovation**.  
 
----
+---  
 
-## 8. Launch Geography  
+### 8. Launch Geography & Phasing  
 
-| **Phase** | **Geographies** | **Rationale** |
-|-----------|----------------|----------------|
-| **Phase 1 (Month 0‑3)** | **Tier‑1**: Delhi‑NCR, Mumbai, Bengaluru, Hyderabad, Chennai. | Highest early‑adopter density, logistics readiness, media reach. |
-| **Phase 2 (Month 4‑8)** | **Tier‑2**: Pune, Ahmedabad, Lucknow, Kochi, Indore. | Growing health‑food awareness; test micro‑hub model. |
-| **Phase 3 (Month 9‑12)** | **Tier‑3**: Mysore, Jodhpur, Bhopal, Patna, Guwahati. | Leverage learned demand patterns; introduce affordable SKU. |
-| **Phase 4 (Year 2)** | Pan‑India expansion via additional marketplace partners and QSR chains. | Scale after achieving product‑market fit and supply‑chain stability. |
+| Phase | Metro(s) | Objectives | SKU Mix | Expected Revenue Share |
+|-------|----------|------------|---------|------------------------|
+| **Phase 0 – Foundations** | N/A (HQ) | Regulatory approvals, supplier contracts, CM set‑up, MVP SKU development. | N/A | N/A |
+| **Phase 1 – Pilot** (Month 3‑8) | Delhi‑NCR, Mumbai, Bengaluru, Hyderabad, Chennai | Validate demand, DTC platform, Marketplace onboarding, initial Modern Trade entries (≥ 15 stores each). | Core 3 SKUs – *Masala Chickpea Curry*, *Tikka Pea Protein Bowl*, *Protein‑Rich Snack Bar*. | 30 % of FY 26 revenue (target: ₹75 mn). |
+| **Phase 2 – Scale** (Month 9‑12) | Add Tier‑2: Pune, Kolkata, Ahmedabad, Surat, Indore + selective Kirana in Phase 2b (Month 11‑12). | Expand Modern Trade footprint (≥ 120 stores), deepen DTC subscription, introduce 2‑new SKUs (regional flavour & plant‑based protein powder). | 5 SKUs total. | Remaining 70 % of FY 26 revenue (₹175 mn). |
 
-*Assumption*: Tier‑1 accounts for 55 % of Year‑1 revenue; Tier‑2 adds 30 %; Tier‑3 15 %.
+*Assumption (A):* Tier‑2 pilot will achieve ≥ 70 % of Tier‑1 conversion rates after a 4‑week “taste‑test” activation.  
 
----
+---  
 
-## 9. Product Portfolio  
+### 9. Product Portfolio  
 
-| **SKU** | **Format** | **Key Claims** | **Price (₹)** | **Launch Timing** |
-|---------|------------|----------------|---------------|--------------------|
-| **Masala Pea Crumble** | 200 g ready‑to‑cook, microwave | High protein ≥ 20 g, gluten‑free, chef‑curated | 179 | Month 0 (core) |
-| **Coconut Curry Chickpea Bites** | 200 g frozen | Plant‑protein 18 g, vegan, no preservatives | 189 | Month 2 |
-| **Plain Pea Protein Powder** | 500 g pouch | 80 % protein, iso‑protein, low‑cals | 299 | Month 3 (price‑anchor) |
-| **Spicy Tikka Marinated Strips** | 200 g ready‑to‑cook | 22 g protein, high‑spice, GLA‑free | 199 | Month 4 (regional) |
-| **Limited‑Edition Regional Flavour** (e.g., “Maharashtrian Misal”) | 200 g | Seasonal, co‑created with local chef | 199 | Month 6 (test) |
+| SKU | Category | Size | Protein (g) | USP | MSRP (₹) |
+|-----|----------|------|-------------|-----|----------|
+| **Masala Chickpea Curry** | Ready‑to‑Eat (RT) | 250 g | 20 | Indian masala, shelf‑stable, vegan. | 150 |
+| **Tikka Pea Protein Bowl** | RT | 350 g | 22 | Grill‑style, low‑oil, low‑sugar. | 180 |
+| **Protein‑Rich Snack Bar** | Snack | 45 g | 12 | Crunchy, no added sugar, portable. | 60 |
+| **Spiced Pea Protein Powder** | Powder | 500 g | 30 per scoop | Unflavoured + optional masala sachet. | 250 |
+| **Curry‑Infused Lentil Soup** (Phase 2) | RT | 300 g | 18 | New regional flavour (South‑Indian). | 160 |
 
-*Assumption*: Each SKU has ≥ 30 days shelf‑life (frozen) or 6 months (dry).  
+*Recommendation (R):* Begin with **3 core SKUs** (two RT meals + bar) to simplify supply‑chain and marketing; add powder & new RT in Phase 2.  
 
-**R&D Note**: Keep a “flavour‑innovation pipeline” of 6 concepts ready for rapid launch.
+---  
 
----
+### 10. Pricing Strategy  
 
-## 10. Pricing & Promotion  
+| Channel | Pricing Approach | Target Gross Margin |
+|---------|------------------|---------------------|
+| **DTC (app/website)** | MSRP – 5 % discount on first order, subscription (monthly) → 10 % discount. | **≈ 48 %** |
+| **Marketplace** | MSRP (price‑parity monitoring), promotional coupons – 10 % max. | **≈ 45 %** |
+| **Modern Trade** | MSRP – 12 % trade discount; promotional stack‑up limited to 15 % total. | **≈ 42 %** |
+| **Kirana** | Value‑pack (500 g) at **₹120** (≈ 8 % lower than modern trade). | **≈ 40 %** |
 
-| **Pricing Tier** | **Strategy** | **Target Margin** |
-|------------------|--------------|-------------------|
-| **Premium‑Value (₹150‑₹200)** | Position via chef endorsement, limited‑edition flavours. | Gross 38 % |
-| **Price‑Floor (₹120‑₹150)** | Plain protein powder, high‑volume SKUs for kirana. | Gross 32 % |
-| **Bundle** | 2‑pack + free recipe booklet (₹30 discount). | Improves AOV by 12 %. |
+*Assumption (A):* Raw‑material cost per 250 g RT = **₹40**; packaging = **₹15**; logistics = **₹10**; gives baseline COGS ≈ ₹65 (≈ 43 % of MSRP).  
 
-**Promotional Mix (first 12 months)**  
+---  
 
-| **Channel** | **Tactics** | **Spend % (Year‑1)** |
-|-------------|-------------|----------------------|
-| Digital (Meta, Instagram, YouTube Shorts) | Storytelling videos, “cook‑with‑chef” live streams, UGC contests | 35 % |
-| Influencer (micro 10‑50 k) | 1‑post/week + coupon code tracking | 15 % |
-| Marketplace | Sponsored product ads, lightning deals | 20 % |
-| Offline Sampling | Kirana “taste‑test” kits, QSR pop‑ups | 15 % |
-| Loyalty/App (gamified challenges) | Points → free SKU, referral bonuses | 5 % |
-| PR/Events | Launch at food‑tech expo, chef media day | 5 % |
+### 11. Distribution & Partnerships  
 
-*Assumption*: CAC target ≤ ₹120 (incl. media, influencer fees, logistics).  
-
-**KPIs for Promotion**: CAC, ROAS, repeat‑purchase rate (RPR) ≥ 30 % after 3 months, Net Promoter Score (NPS) ≥ 45.
-
----
-
-## 11. Distribution & Partnerships  
-
-| **Channel** | **Partner** | **Role / SLA** | **Launch Quarter** |
-|-------------|-------------|----------------|--------------------|
-| **Online Marketplace** | Amazon, Flipkart, JioMart | Fulfilment by Amazon (FBA) / JioMart Warehouse; 48‑hr delivery SLA | Q0 |
-| **Direct‑to‑Consumer** | Shopify (+local payment gateway) | End‑to‑end order mgmt, subscription module; PCI‑DSS compliance | Q0 |
-| **Micro‑Hub Kirana** | Udaan, Ninjacart | Stock‑replenishment every 48 h; “out‑of‑stock” < 2 % | Q1 (pilot) |
-| **QSR Pilot** | Faasos (or similar) | Co‑branded menu item (Masala Crumble Bowl); revenue share 15 % | Q2 |
-| **Fitness‑App Tie‑in** | Cure.fit | In‑app recipe & discount push; data capture for health‑profile | Q2 |
-| **Ingredient Supply** | Pea‑Protein plant (Reliance‑FoodTech) + local spice aggregators | Dual‑source contracts, 3‑month buffer inventory | Q–2 |
-| **Logistics** | Delhivery, Blue Dart | Last‑mile for D2C; COD handling; insurance coverage | Q0 |
-
-**Governance**: Quarterly Business Review (QBR) with each partner; performance dashboard (on‑time‑delivery, sell‑through, margin).  
-
-*Risk*: Partner activation delays (Low likelihood, Medium impact) – mitigated by signed MoUs with fallback partners.
-
----
-
-## 12. Marketing & Customer Acquisition  
-
-1. **Pre‑Launch (‑3 → 0 months)**  
-   - Teaser videos (Chef “coming soon”) → 30 k email sign‑ups.  
-   - Beta‑test D2C landing page – capture early‑bird interest (discount code).  
-   - Influencer seeding (30 micro‑influencers) – first‑look reviews.  
-
-2. **Launch (0‑3 months)**  
-   - Paid social burst (Meta, Instagram Reels) – 3 weeks, A/B test ad copy.  
-   - Marketplace “Lightning Deal” – 48‑hour price‑promo, drive rank.  
-   - In‑store kirana tasting (10 % of pilot stores).  
-
-3. **Post‑Launch (3‑12 months)**  
-   - Retargeting & email drip (recipe series, loyalty points).  
-   - “Cook‑along” live streams with chef – drive repeat purchase.  
-   - Community challenges (#MyPranaBowl) – incentivize UGC with coupon.
+| Partner Type | Role | Selection Criteria | Primary Contact |
+|--------------|------|--------------------|-----------------|
+| **Contract Manufacturer (CM)** | Produce RT meals & bars (GFSI/FSSC 22000). | Multi‑source (≥ 2 plants), capacity ≥ 200 k units/mo, audit passed. | Procurement Lead |
+| **Pea‑Protein Supplier** | Raw ingredient (non‑GMO, certified). | ≥ 2 suppliers (India & Australia), buffer stock 3 months. | R&D/Procurement |
+| **3PL – Ambient** | Warehouse & delivery for DTC & Marketplace (₹1‑3 days). | SLA ≤ 24 h order‑to‑dispatch, temperature‑controlled for RT (ambient). | Logistics Manager |
+| **3PL – Cold (optional)** | For any future refrigerated SKU. | Proven cold‑chain compliance, penalty clauses for excursions. | Logistics Manager |
+| **Modern Trade Retailers** | Shelf space, in‑store demos. | ≥ 15 % of category shelf, promotional support. | Sales Head |
+| **Marketplace Platforms** | Digital storefront, fulfillment (FBA/FBM). | API integration, price‑monitoring tools. | E‑Commerce Lead |
+| **Influencer Agency** | Content creation, UGC, affiliate tracking. | 10‑20 micro + 3‑5 macro influencers; contracts with conduct clause. | Marketing Lead
