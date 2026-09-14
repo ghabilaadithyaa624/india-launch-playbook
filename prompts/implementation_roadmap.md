@@ -100,11 +100,52 @@ input_digest: {{input_digest}}
 
 ## Focus areas
 
-- Phases with dependencies
-- Critical path
-- Go/no-go decision gates
-- Team and capability needs
-- What must be true to proceed at each gate
+Domain guidance for sequencing an India launch. The roadmap's job is to put the
+long-lead and revenue-blocking items first, and to make each gate refusable.
+
+**Sequence by lead time, not by convenience**
+- Some items have external lead times you do not control and that gate first
+  revenue. Start them early and treat them as critical path:
+  - Company incorporation and PAN/TAN, before a bank account can be opened.
+  - Current-account opening and bank KYC.
+  - GST registration, required before a compliant tax invoice can be issued.
+  - Payment-gateway or aggregator onboarding, which requires the entity, the
+    bank account and business documentation, and involves a review step with
+    its own turnaround.
+  - Sector licences where applicable — food, drugs and devices, import/export
+    and similar all have their own queues.
+  - DLT sender and template registration before commercial SMS can be sent,
+    and messaging-template approval for WhatsApp.
+  - Trademark filing, which can run in parallel but takes time to register.
+- Do not state a duration for any of these as a fact. Express each as an
+  estimate with low/base/high and flag that the operator must confirm current
+  turnaround with the provider or registry.
+
+**Critical path**
+- Identify the chain that actually determines the launch date, and say which
+  items are genuinely parallel. Most first-revenue dates slip on entity,
+  banking and payments, not on product.
+- Name each dependency explicitly: what must finish before this can start.
+
+**Gates**
+- Each gate states the conditions that must be true to proceed, the owner role
+  who decides, the evidence they need to see, and what happens if the condition
+  is not met. A gate with no stop condition is a milestone, not a gate.
+- Include at minimum: a legal-and-compliance gate before taking money, an
+  evidence gate before scaling spend, and a support-readiness gate before
+  opening access.
+
+**Capability**
+- State the roles needed per phase and whether each is a hire, a contractor or
+  a retained professional. Compliance work is typically retained: chartered
+  accountant, company secretary and counsel.
+- Flag the point at which headcount triggers additional obligations such as PF,
+  ESI and state registrations, so it is planned rather than discovered.
+
+**Discipline**
+- No date is a fact. Durations are estimates with ranges and dependencies.
+- Any gate involving tax, licensing, payments, privacy or labour sets
+  `requires_professional_review`.
 
 ## Self-check before returning
 

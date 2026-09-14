@@ -100,11 +100,50 @@ input_digest: {{input_digest}}
 
 ## Focus areas
 
-- Entry model options with trade-offs
-- Positioning and differentiation
-- Channel strategy
-- Localisation requirements
-- Partnership structures
+Domain guidance for India entry strategy. Compare entry models on their real
+constraints, not on abstract preference.
+
+**Entry model trade-offs**
+- Options typically include: direct online self-serve; founder-led direct
+  sales; reseller, channel-partner or distributor; systems-integrator or
+  agency partnership; marketplace listing; franchise; and subsidiary or
+  branch if the operator is foreign.
+- Score each on what actually bites: time to first revenue, working capital
+  and credit exposure, degree of control over the customer relationship,
+  regulatory load, and reversibility if it fails.
+- If the operator is foreign, entity choice interacts with FDI routes, FEMA
+  reporting and transfer pricing. Flag it for professional review rather than
+  asserting what is permitted.
+
+**Positioning for this market**
+- Position against the status quo, not only against named vendors. The
+  incumbent is usually a manual process someone is already paid to do.
+- Be explicit about whether the wedge is cost substitution, compliance
+  necessity, speed, or trust. Cost-substitution positioning collapses if local
+  labour is cheaper than the subscription.
+
+**Channel**
+- Distinguish channels that create demand from channels that only fulfil it.
+- For SME buyers, intermediaries who already hold trust — chartered
+  accountants, industry associations, distributors, local IT resellers — often
+  outperform direct digital acquisition, but they expect margin and take time
+  to activate.
+
+**Localisation, as a cost line and not a checkbox**
+- Language coverage for the interface, support and collateral, and which
+  languages the target segments actually transact in.
+- Mobile-first and low-bandwidth behaviour; whether the buyer will ever use a
+  desktop.
+- Payment methods expected by the segment, and invoice formats accepted by
+  finance teams, including GST-compliant tax invoices.
+- Support hours in IST, and whether support must be voice or WhatsApp rather
+  than email or ticketing.
+
+**Partnerships**
+- Specify the commercial structure: referral fee, reseller margin, white-label,
+  or revenue share, and who owns the customer relationship and the data.
+- Name the exclusivity, termination and minimum-commitment terms you are
+  assuming. State them as assumptions with an `impact_if_wrong`.
 
 ## Self-check before returning
 

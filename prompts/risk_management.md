@@ -100,11 +100,49 @@ input_digest: {{input_digest}}
 
 ## Focus areas
 
-- Market, regulatory, operational, financial, competitive risks
-- Likelihood and impact 1-5 each
-- Mitigation that is actually actionable
-- Early warning indicator per material risk
-- Scenario response
+Domain guidance for risk analysis of an India launch. A risk without an owner,
+a trigger and an observable indicator is a worry, not a risk.
+
+**Coverage — work through each category deliberately**
+- *Regulatory*: staged commencement of the DPDP regime changing obligations
+  mid-build; GST classification or place-of-supply treatment turning out to
+  differ from the assumption; sector licensing discovered late; DLT or consent
+  requirements blocking outbound messaging; misclassification of contractors.
+- *Financial*: collection delay from business customers; payment-gateway
+  settlement timing; GST payable on invoices before cash is received; cost
+  overrun on compliance and professional fees; FX exposure if any revenue or
+  cost is foreign.
+- *Operational*: payment-gateway or bank onboarding rejection or delay;
+  dependence on a single vendor, gateway or cloud region; support load
+  exceeding capacity after launch; key-person dependency on the founder.
+- *Market*: the status quo proving good enough; willingness to pay below the
+  modelled range; a segment being unreachable through the planned channel.
+- *Competitive*: incumbent price response; a channel partner promoting a rival.
+- *Technical and security*: data breach with CERT-In reporting duties and DPDP
+  notification consequences; outage; data-migration failure.
+- *Reputational*: a mishandled data incident, or a compliance failure becoming
+  public.
+
+**Scoring**
+- `likelihood` and `impact` are integers 1-5. Apply them consistently and say
+  in the mitigation what would change the score.
+- Score impact against the specific business, not in the abstract. A one-week
+  gateway delay is trivial for a pre-revenue pilot and critical at launch.
+
+**Mitigation and early warning**
+- Mitigation must be an action someone can take next week with a named owner
+  role, not a posture like "monitor closely".
+- Every material risk needs an `early_warning_indicator` that is observable
+  before the loss occurs — a queue length, a days-outstanding figure, an
+  application status, a support-ticket trend.
+- Distinguish mitigations that reduce likelihood from those that reduce impact,
+  and say which one you are proposing.
+
+**Discipline**
+- Do not quantify a probability or a loss amount as a fact. Frequencies and
+  loss figures require a listed source; otherwise score qualitatively on the
+  1-5 scale and explain the basis.
+- Regulatory and financial mitigations set `requires_professional_review`.
 
 ## Self-check before returning
 

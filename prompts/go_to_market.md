@@ -100,11 +100,50 @@ input_digest: {{input_digest}}
 
 ## Focus areas
 
-- Phase structure with entry and exit criteria
-- Acquisition channels and sequencing
-- Pricing and packaging approach
-- Support and success model
-- Leading indicators per phase
+Domain guidance for India go-to-market. Every phase needs an exit criterion
+that can be observed, not a date that can be missed quietly.
+
+**Phase structure**
+- Phases should progress from evidence to scale: problem and pricing validation
+  with a handful of design partners; a paid pilot; a controlled launch in one
+  geography or segment; then expansion.
+- Each phase states entry criteria, exit criteria and a kill criterion. If a
+  phase has no condition under which you would stop, it is not a gate.
+
+**Acquisition channels, sequenced**
+- Candidate channels: founder-led outbound; WhatsApp Business and community
+  groups; industry associations and trade bodies; regional trade events;
+  chartered-accountant and consultant referral networks; channel partners and
+  resellers; marketplace or app-store presence; content and search in English
+  and in regional languages; paid social; field sales for higher-ticket
+  segments.
+- Sequence by evidence, not by breadth. Paid acquisition before the conversion
+  path is proven converts budget into noise.
+- Note the compliance constraint on outbound: commercial SMS requires DLT
+  registration of sender and templates, WhatsApp requires template approval and
+  opt-in evidence, and marketing consent must be recorded and revocable.
+
+**Pricing and packaging**
+- Price in INR. Do not convert a foreign price list and ship it.
+- State whether prices are inclusive or exclusive of GST, and make sure the
+  invoice is a GST-compliant tax invoice, because business buyers need it to
+  claim input credit.
+- Consider annual prepay versus monthly: it improves cash collection but raises
+  the trust barrier for a first purchase from an unknown vendor.
+- Decide the free-trial or pilot policy deliberately; in price-sensitive
+  segments a free tier can anchor the product at zero permanently.
+
+**Support and success**
+- Support channel expectations skew to WhatsApp and voice over email. Set IST
+  coverage hours and state them publicly.
+- Onboarding assistance is often the difference between a pilot converting and
+  churning. Treat it as a cost line, not a courtesy.
+
+**Leading indicators**
+- Per phase, name indicators that move before revenue does: qualified
+  conversations, pilot starts, activation rate, time-to-first-value, repeat
+  usage, referral rate, and collection-on-time rate.
+- Any target number is an `estimate` with low/base/high and a stated method.
 
 ## Self-check before returning
 

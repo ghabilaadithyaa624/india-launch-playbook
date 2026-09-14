@@ -100,10 +100,49 @@ input_digest: {{input_digest}}
 
 ## Focus areas
 
-- Demand drivers and who actually feels the pain
-- Segment definition and relative size
-- Adoption barriers specific to India
-- Willingness to pay signals (label clearly as estimates)
+Domain guidance for India market research. These are the questions your output
+should be able to answer; they are not claims. Do not assert any number that is
+not carried by a source id — put derived numbers in `estimates[]` with a method.
+
+**Demand and the person who feels the pain**
+- Name the buyer, the user and the payer separately. In Indian SME and
+  prosumer segments they are frequently three different people, and the
+  proprietor often signs personally.
+- State what the customer does *today* instead of buying: spreadsheets,
+  WhatsApp, a local vendor, an in-house junior, or simply absorbing the cost.
+  The status quo is the true baseline for any adoption estimate.
+
+**Segmentation that reflects how India actually splits**
+- Segment on axes that change behaviour: metro vs tier-2/tier-3, English vs
+  regional-language operation, GST-registered vs unregistered, smartphone-only
+  vs desktop, salaried vs self-employed. Avoid segmenting purely by company-size
+  bands imported from Western market models.
+- Say which segment you are sizing. A national TAM with no segment attached is
+  not decision-useful.
+
+**Adoption barriers specific to this market**
+- Price anchoring against very low-cost or free local substitutes, and against
+  informal labour that can do the task manually.
+- Trust and proof: whether the buyer needs a referral, a physical presence, a
+  local phone number, or a known-brand association before paying.
+- Language and onboarding load; whether the product must work on a shared or
+  low-end device, on intermittent connectivity, or offline.
+- Payment friction: whether the buyer will transact online at all, and what
+  method they expect (UPI, card, netbanking, invoice-and-bank-transfer).
+
+**Willingness to pay**
+- Treat every WTP number as an `estimate` with low/base/high and a stated
+  method, never a fact. Anchor it on an observable substitute cost where you
+  can, and record that anchor as the `method`.
+- Distinguish willingness to pay from ability to pay and from willingness to
+  pay *on time*. They diverge sharply for small-business customers.
+
+**Discipline**
+- Market-size figures circulate widely in press coverage with no traceable
+  basis. If you cannot attribute a number to a listed source, do not state it —
+  build a bottom-up estimate instead and expose the assumptions.
+- Record what you could not determine in `coverage.unanswered_questions`
+  rather than filling the gap with a plausible number.
 
 ## Self-check before returning
 
